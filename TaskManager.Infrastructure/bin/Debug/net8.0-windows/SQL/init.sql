@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS Users (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Username TEXT NOT NULL UNIQUE,
+    FullName TEXT NOT NULL,
+    PasswordHash TEXT NOT NULL,
+    PasswordSalt TEXT NOT NULL,
+    IsActive INTEGER NOT NULL DEFAULT 1,
+    CreatedAt TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Tasks (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Description TEXT NOT NULL,
+    AssignedUserId INTEGER NOT NULL,
+    Status INTEGER NOT NULL,
+    Priority INTEGER NOT NULL,
+    DueDate TEXT NOT NULL,
+    Notes TEXT,
+    CreatedAt TEXT NOT NULL,
+    UpdatedAt TEXT NOT NULL,
+    FOREIGN KEY (AssignedUserId) REFERENCES Users(Id)
+);
