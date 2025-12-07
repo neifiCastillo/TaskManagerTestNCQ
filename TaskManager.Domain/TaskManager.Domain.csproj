@@ -6,10 +6,9 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>TaskManager.Domain</RootNamespace>
+    <AssemblyName>TaskManager.Domain</AssemblyName>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\TaskManager.Application\TaskManager.Application.csproj" />
-  </ItemGroup>
 
 </Project>

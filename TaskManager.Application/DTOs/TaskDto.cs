@@ -3,10 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TaskManager.Domain.Enums;
+using TaskStatus = TaskManager.Domain.Enums.TaskStatus;
 
 namespace TaskManager.Application.DTOs
 {
-    class TaskDto
+    public class TaskDto
     {
+        public int Id { get; set; }
+        public string Description { get; set; } = "";
+        public int AssignedUserId { get; set; }
+        public TaskStatus Status { get; set; }
+        public TaskPriority Priority { get; set; }
+        public DateTime DueDate { get; set; }
+        public string Notes { get; set; } = "";
     }
 }

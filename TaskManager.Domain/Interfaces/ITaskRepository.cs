@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TaskManager.Application.Filters;
 using TaskManager.Domain.Entities;
+using TaskManager.Domain.Filters;
+
 
 namespace TaskManager.Domain.Interfaces
 {
