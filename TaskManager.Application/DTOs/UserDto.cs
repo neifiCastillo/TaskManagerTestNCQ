@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TaskManager.Application.DTOs
 {
-    class UserDto
+    public class UserDto
     {
+        public int Id { get; set; }
+        public string Username { get; set; } = "";
+        public string FullName { get; set; } = "";
     }
 }

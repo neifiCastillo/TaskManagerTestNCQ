@@ -8,6 +8,7 @@ C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\o
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\TaskManager.WinForms.AssemblyInfoInputs.cache
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\TaskManager.WinForms.AssemblyInfo.cs
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\TaskManager.WinForms.csproj.CoreCompileInputs.cache
+C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\TaskManager.WinForms.sourcelink.json
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.WinForms.exe
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\SQL\init.sql
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.WinForms.dll.config
@@ -185,11 +186,9 @@ C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\b
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.Application.dll
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.Domain.dll
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.Infrastructure.dll
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.Infrastructure.pdb
-C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.Application.pdb
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.Domain.pdb
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\TaskMana.94380C39.Up2Date
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\TaskManager.WinForms.dll

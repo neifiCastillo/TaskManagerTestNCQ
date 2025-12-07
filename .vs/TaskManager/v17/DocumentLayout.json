@@ -1,12 +1,126 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{07453F3F-8ED2-42E4-BAC5-DA3BF913DCFB}|TaskManager.Infrastructure\\TaskManager.Infrastructure.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.infrastructure\\repositories\\dappertaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07453F3F-8ED2-42E4-BAC5-DA3BF913DCFB}|TaskManager.Infrastructure\\TaskManager.Infrastructure.csproj|solutionrelative:taskmanager.infrastructure\\repositories\\dappertaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.application\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|solutionrelative:taskmanager.application\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|solutionrelative:taskmanager.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.application\\dtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|solutionrelative:taskmanager.application\\dtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.application\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|solutionrelative:taskmanager.application\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.application\\dtos\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|solutionrelative:taskmanager.application\\dtos\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "TaskManager.Application\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\Services\\AuthService.cs",
+              "RelativeToolTip": "TaskManager.Application\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:32:20.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DapperTaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Infrastructure\\Repositories\\DapperTaskRepository.cs",
+              "RelativeDocumentMoniker": "TaskManager.Infrastructure\\Repositories\\DapperTaskRepository.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Infrastructure\\Repositories\\DapperTaskRepository.cs",
+              "RelativeToolTip": "TaskManager.Infrastructure\\Repositories\\DapperTaskRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:31:51.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\DTOs\\RegisterUserDto.cs",
+              "RelativeDocumentMoniker": "TaskManager.Application\\DTOs\\RegisterUserDto.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\DTOs\\RegisterUserDto.cs",
+              "RelativeToolTip": "TaskManager.Application\\DTOs\\RegisterUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:31:37.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\DTOs\\UserDto.cs",
+              "RelativeDocumentMoniker": "TaskManager.Application\\DTOs\\UserDto.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\DTOs\\UserDto.cs",
+              "RelativeToolTip": "TaskManager.Application\\DTOs\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:31:24.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TaskDto.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\DTOs\\TaskDto.cs",
+              "RelativeDocumentMoniker": "TaskManager.Application\\DTOs\\TaskDto.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\DTOs\\TaskDto.cs",
+              "RelativeToolTip": "TaskManager.Application\\DTOs\\TaskDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:31:18.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\Services\\TaskService.cs",
+              "RelativeDocumentMoniker": "TaskManager.Application\\Services\\TaskService.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\Services\\TaskService.cs",
+              "RelativeToolTip": "TaskManager.Application\\Services\\TaskService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwAUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:30:39.581Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

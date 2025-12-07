@@ -208,18 +208,7 @@
         }
       },
       "System.Memory/4.5.3": {},
-      "TaskManager.Application/1.0.0": {
-        "runtime": {
-          "TaskManager.Application.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "TaskManager.Domain/1.0.0": {
-        "dependencies": {
-          "TaskManager.Application": "1.0.0"
-        },
         "runtime": {
           "TaskManager.Domain.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -297,11 +286,6 @@
       "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
       "path": "system.memory/4.5.3",
       "hashPath": "system.memory.4.5.3.nupkg.sha512"
-    },
-    "TaskManager.Application/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "TaskManager.Domain/1.0.0": {
       "type": "project",

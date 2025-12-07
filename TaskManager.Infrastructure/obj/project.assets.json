@@ -209,25 +209,9 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "TaskManager.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/TaskManager.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/TaskManager.Application.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
-        ]
-      },
       "TaskManager.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "TaskManager.Application": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/TaskManager.Domain.dll": {}
         },
@@ -421,11 +405,6 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "TaskManager.Application/1.0.0": {
-      "type": "project",
-      "path": "../TaskManager.Application/TaskManager.Application.csproj",
-      "msbuildProject": "../TaskManager.Application/TaskManager.Application.csproj"
     },
     "TaskManager.Domain/1.0.0": {
       "type": "project",
