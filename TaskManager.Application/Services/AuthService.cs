@@ -9,6 +9,7 @@ using TaskManager.Application.Helpers;
 using TaskManager.Domain.Interfaces;
 using TaskManager.Domain.Entities;
 using User = TaskManager.Domain.Entities.User;
+using TaskManager.Domain.Exceptions;
 
 namespace TaskManager.Application.Services
 {
@@ -26,10 +27,10 @@ namespace TaskManager.Application.Services
             var user = _userRepo.GetByUsername(username);
 
             if (user == null)
-                throw new Exception("Usuario no encontrado.");
+                throw new DomainException("Usuario no encontrado.");
 
             if (!PasswordHasher.VerifyPassword(password, user.PasswordHash, user.PasswordSalt))
-                throw new Exception("Contraseña incorrecta.");
+                throw new DomainException("Contraseña incorrecta.");
 
             return new UserDto
             {
@@ -45,16 +46,16 @@ namespace TaskManager.Application.Services
                 string.IsNullOrWhiteSpace(dto.FullName) ||
                 string.IsNullOrWhiteSpace(dto.Password))
             {
-                throw new Exception("Todos los campos son obligatorios.");
+                throw new DomainException("Todos los campos son obligatorios.");
             }
 
             if (dto.Password != dto.ConfirmPassword)
-                throw new Exception("Las contraseñas no coinciden.");
+                throw new DomainException("contraseña incorrecta.");
 
-            // Validar si user existe
+            // Check if the user exists
             var existing = _userRepo.GetByUsername(dto.Username);
             if (existing != null)
-                throw new Exception("El usuario ya existe.");
+                throw new DomainException("El usuario ya existe.");
 
             PasswordHasher.CreatePasswordHash(dto.Password, out string hash, out string salt);
 
