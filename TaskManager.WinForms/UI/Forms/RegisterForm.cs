@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManager.Application.DTOs;
 using TaskManager.Application.Services;
+using TaskManager.WinForms.UI.Animations;
 using TaskManager.WinForms.UI.Controls;
 
 namespace TaskManager.WinForms.UI
@@ -21,6 +22,7 @@ namespace TaskManager.WinForms.UI
         {
             InitializeComponent();
             _authService = authService;
+            FormFadeIn.FadeIn(this);
         }
 
         private void btnSave_Click(object sender, EventArgs e)

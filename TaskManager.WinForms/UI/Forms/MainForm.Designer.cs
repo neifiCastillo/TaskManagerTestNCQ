@@ -87,7 +87,7 @@
             gridControl1.Location = new Point(12, 287);
             gridControl1.MainView = gridView1;
             gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(1202, 437);
+            gridControl1.Size = new Size(1608, 437);
             gridControl1.TabIndex = 0;
             gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
             // 
@@ -324,7 +324,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { verTareasToolStripMenuItem, graficosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1226, 25);
+            menuStrip1.Size = new Size(1625, 25);
             menuStrip1.TabIndex = 26;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -374,14 +374,16 @@
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1226, 729);
+            ClientSize = new Size(1625, 729);
             Controls.Add(btnNew);
             Controls.Add(groupBox1);
             Controls.Add(labelControl5);
             Controls.Add(gridControl1);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             IconOptions.Image = (Image)resources.GetObject("MainForm.IconOptions.Image");
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
             Name = "MainForm";
             ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using TaskManager.Application.DTOs;
 using TaskManager.Application.Services;
 using TaskManager.Domain.Enums;
+using TaskManager.WinForms.UI.Animations;
 using TaskManager.WinForms.UI.Controls;
 using TaskStatus = TaskManager.Domain.Enums.TaskStatus;
 
@@ -29,7 +30,7 @@ namespace TaskManager.WinForms.UI
             InitializeComponent();
             _taskService = taskService;
             _currentUser = user;
-
+            FormFadeIn.FadeIn(this);
             LoadLookups();
         }
 
@@ -40,20 +41,22 @@ namespace TaskManager.WinForms.UI
             _taskService = taskService;
             _currentUser = user;
             _editingTask = task;
-
+            FormFadeIn.FadeIn(this);
             LoadLookups();
             LoadTask();
-        }
 
+            gridLookUpStatus.Enabled = false;
+        }
         private void LoadLookups()
         {
-            // Piority
-            comboPriority.Properties.DataSource = Enum.GetValues(typeof(TaskPriority));
-            comboPriority.EditValue = TaskPriority.Medium;
+            // Priority
+            gridLookUpPriority.Properties.DataSource = Enum.GetValues(typeof(TaskPriority));
+            gridLookUpPriority.EditValue = TaskPriority.Medium;
 
-            // Status
-            comboStatus.Properties.DataSource = Enum.GetValues(typeof(TaskStatus));
-            comboStatus.EditValue = TaskStatus.Pending;
+            // status — only pending
+            gridLookUpStatus.Properties.DataSource = new[] { TaskStatus.Pending };
+            gridLookUpStatus.EditValue = TaskStatus.Pending;
+            gridLookUpStatus.Enabled = false;
 
             // User
             var users = _taskService.GetUsers().ToList();
@@ -66,20 +69,27 @@ namespace TaskManager.WinForms.UI
             view.Columns.AddVisible("FullName", "Usuario");
             view.OptionsView.ShowIndicator = false;
             view.OptionsView.ShowColumnHeaders = false;
+
+            dateDueDate.Properties.MinValue = DateTime.Today;
+
+            //Pre-select logged-in user when creating task
+            if (_editingTask == null)
+                gridLookUpUsers.EditValue = _currentUser.Id;
         }
+
         private void LoadTask()
         {
             if (_editingTask == null)
                 return;
 
             txtDescription.Text = _editingTask.Description;
-            comboPriority.EditValue = _editingTask.Priority;
-            comboStatus.EditValue = _editingTask.Status;
+            gridLookUpPriority.EditValue = _editingTask.Priority;
+            gridLookUpStatus.EditValue = _editingTask.Status;
             gridLookUpUsers.EditValue = _editingTask.AssignedUserId;
             dateDueDate.EditValue = _editingTask.DueDate;
             memoNotes.Text = _editingTask.Notes;
 
-            btnSave.Text = "Actualizar";
+            btnSave.Text = "Editar";
         }
 
         private bool ValidateForm()
@@ -98,8 +108,17 @@ namespace TaskManager.WinForms.UI
 
             if (dateDueDate.EditValue == null)
             {
-                XtraMessageBox.Show("Debe seleccionar una fecha límite.");
+                XtraMessageBox.Show("Debe seleccionar una fecha de Compromiso.");
                 return false;
+            }
+            
+            if (dateDueDate.EditValue is DateTime dueDate)
+            {
+                if (dueDate < DateTime.Today)
+                {
+                    XtraMessageBox.Show("La fecha de compromiso no puede ser menor al día actual.");
+                    return false;
+                }
             }
 
             return true;
@@ -118,8 +137,8 @@ namespace TaskManager.WinForms.UI
             var dto = new TaskDto
             {
                 Description = txtDescription.Text,
-                Priority = (TaskPriority)comboPriority.EditValue,
-                Status = (TaskStatus)comboStatus.EditValue,
+                Priority = (TaskPriority)gridLookUpPriority.EditValue,
+                Status = (TaskStatus)gridLookUpStatus.EditValue,
                 AssignedUserId = (int)gridLookUpUsers.EditValue,
                 DueDate = (DateTime)dateDueDate.EditValue,
                 Notes = memoNotes.Text
@@ -139,7 +158,6 @@ namespace TaskManager.WinForms.UI
                 SuccessHandler.Show("Tarea actualizada con éxito.");
             }
 
-            DialogResult = DialogResult.OK;
             Close();
         }
     }
