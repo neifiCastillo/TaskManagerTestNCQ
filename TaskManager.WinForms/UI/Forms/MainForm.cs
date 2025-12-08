@@ -352,7 +352,6 @@ namespace TaskManager.WinForms.UI
 
             var form = new TaskForm(_taskService, _currentUser, dto);
             form.ShowDialog();
-            SuccessHandler.Show("Tarea editada correctamente, exito");
             LoadTasks();
         }
         private void btnDelete_Click(object rowObj, EventArgs e)
@@ -378,7 +377,6 @@ namespace TaskManager.WinForms.UI
                 MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 _taskService.DeleteTask(row.Id);
-                SuccessHandler.Show("Tarea eliminada correctamente, exito");
                 LoadTasks();
             }
         }
