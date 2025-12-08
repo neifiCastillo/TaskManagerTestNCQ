@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using TaskManager.Application.DTOs;
 using TaskManager.Application.Services;
 using TaskManager.Domain.Enums;
+using TaskManager.WinForms.UI.Controls;
 using TaskStatus = TaskManager.Domain.Enums.TaskStatus;
 
 namespace TaskManager.WinForms.UI
@@ -22,7 +23,7 @@ namespace TaskManager.WinForms.UI
         private readonly UserDto _currentUser;
         private readonly TaskDto _editingTask;
 
-        // Constructor Crear
+        //Builder Create
         public TaskForm(TaskService taskService, UserDto user)
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace TaskManager.WinForms.UI
             LoadLookups();
         }
 
-        // Constructor Editar
+        // Builder edit
         public TaskForm(TaskService taskService, UserDto user, TaskDto task)
         {
             InitializeComponent();
@@ -44,18 +45,17 @@ namespace TaskManager.WinForms.UI
             LoadTask();
         }
 
-
         private void LoadLookups()
         {
-            // PRIORITY
+            // Piority
             comboPriority.Properties.DataSource = Enum.GetValues(typeof(TaskPriority));
             comboPriority.EditValue = TaskPriority.Medium;
 
-            // STATUS
+            // Status
             comboStatus.Properties.DataSource = Enum.GetValues(typeof(TaskStatus));
             comboStatus.EditValue = TaskStatus.Pending;
 
-            // USER
+            // User
             var users = _taskService.GetUsers().ToList();
             gridLookUpUsers.Properties.DataSource = users;
             gridLookUpUsers.Properties.DisplayMember = "FullName";
@@ -67,8 +67,6 @@ namespace TaskManager.WinForms.UI
             view.OptionsView.ShowIndicator = false;
             view.OptionsView.ShowColumnHeaders = false;
         }
-
-        // IF IT IS EDITING → fill in the fields
         private void LoadTask()
         {
             if (_editingTask == null)
@@ -129,16 +127,16 @@ namespace TaskManager.WinForms.UI
 
             if (_editingTask == null)
             {
-                // CREATE
+                // Create
                 _taskService.CreateTask(dto);
-                XtraMessageBox.Show("Tarea creada con éxito.");
+                SuccessHandler.Show("Tarea creada con éxito.");
             }
             else
             {
-                // EDIT
+                // Edit
                 dto.Id = _editingTask.Id;
                 _taskService.UpdateTask(dto);
-                XtraMessageBox.Show("Tarea actualizada con éxito.");
+                SuccessHandler.Show("Tarea actualizada con éxito.");
             }
 
             DialogResult = DialogResult.OK;
