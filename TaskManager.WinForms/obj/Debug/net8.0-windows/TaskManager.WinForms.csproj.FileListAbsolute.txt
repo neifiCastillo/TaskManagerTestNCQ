@@ -196,3 +196,6 @@ C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\o
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\TaskManager.WinForms.pdb
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\TaskManager.WinForms.genruntimeconfig.cache
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\ref\TaskManager.WinForms.dll
+C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.Application.dll
+C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.Application.pdb
+C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\TaskManager.WinForms.Properties.Resources.resources

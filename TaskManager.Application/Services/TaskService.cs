@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TaskManager.Application.DTOs;
 using TaskManager.Domain.Entities;
+using TaskManager.Domain.Exceptions;
 using TaskManager.Domain.Filters;
 using TaskManager.Domain.Interfaces;
 using TaskStatus = TaskManager.Domain.Enums.TaskStatus;
@@ -30,11 +31,11 @@ namespace TaskManager.Application.Services
         public void CreateTask(TaskDto dto)
         {
             if (string.IsNullOrWhiteSpace(dto.Description))
-                throw new Exception("La descripción es obligatoria.");
+                throw new DomainException("La descripción es obligatoria.");
 
             var user = _userRepo.GetById(dto.AssignedUserId);
             if (user == null)
-                throw new Exception("El usuario asignado no existe.");
+                throw new DomainException("El usuario asignado no existe.");
 
             var task = new TaskItem
             {
@@ -54,10 +55,10 @@ namespace TaskManager.Application.Services
             var original = _taskRepo.GetById(dto.Id);
 
             if (original == null)
-                throw new Exception("La tarea no existe.");
+                throw new DomainException("La tarea no existe.");
 
             if (original.Status != TaskStatus.Pending)
-                throw new Exception("Solo se pueden editar tareas en estado PENDIENTE.");
+                throw new DomainException("Solo se pueden editar tareas en estado PENDIENTE.");
 
             original.Description = dto.Description;
             original.AssignedUserId = dto.AssignedUserId;
@@ -74,13 +75,12 @@ namespace TaskManager.Application.Services
             var task = _taskRepo.GetById(taskId);
 
             if (task == null)
-                throw new Exception("Tarea no encontrada.");
+                throw new DomainException("Tarea no encontrada.");
 
-            // Validación del flujo
             if (task.Status == TaskStatus.Pending && newStatus == TaskStatus.InProgress) { }
             else if (task.Status == TaskStatus.InProgress && newStatus == TaskStatus.Done) { }
             else
-                throw new Exception("Cambio de estado inválido.");
+                throw new DomainException("Cambio de estado inválido.");
 
             task.Status = newStatus;
             task.UpdatedAt = DateTime.UtcNow;
@@ -88,14 +88,28 @@ namespace TaskManager.Application.Services
             _taskRepo.Update(task);
         }
 
+        public IEnumerable<UserDto> GetUsers()
+        {
+            var users = _userRepo.GetAll()
+                                 .Where(u => u.IsActive)
+                                 .OrderBy(u => u.FullName);
+
+            return users.Select(u => new UserDto
+            {
+                Id = u.Id,
+                Username = u.Username,
+                FullName = u.FullName
+            });
+        }
+
         public void DeleteTask(int id)
         {
             var task = _taskRepo.GetById(id);
             if (task == null)
-                throw new Exception("Tarea no encontrada.");
+                throw new DomainException("Tarea no encontrada.");
 
             if (task.Status == TaskStatus.InProgress)
-                throw new Exception("No se pueden eliminar tareas en proceso.");
+                throw new DomainException("No se pueden eliminar tareas en proceso.");
 
             _taskRepo.Delete(id);
         }

@@ -10,6 +10,7 @@
         "dependencies": {
           "DevExpress.Data.Desktop": "25.1.7",
           "DevExpress.Win.Design": "25.1.7",
+          "TaskManager.Application": "1.0.0",
           "TaskManager.Infrastructure": "1.0.0"
         },
         "runtime": {
@@ -1627,6 +1628,17 @@
           }
         }
       },
+      "TaskManager.Application/1.0.0": {
+        "dependencies": {
+          "TaskManager.Domain": "1.0.0"
+        },
+        "runtime": {
+          "TaskManager.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "TaskManager.Domain/1.0.0": {
         "runtime": {
           "TaskManager.Domain.dll": {
@@ -2293,6 +2305,11 @@
       "sha512": "sha512-xlJ07FAUSDjPL/GhvVY1/KVPWn2ce056X4nHPwqAa5rkNLiNN5rqh6VcgMUoF6J7ckwhkVJ1vVx/K/47nyyR9g==",
       "path": "system.servicemodel.primitives/8.1.2",
       "hashPath": "system.servicemodel.primitives.8.1.2.nupkg.sha512"
+    },
+    "TaskManager.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "TaskManager.Domain/1.0.0": {
       "type": "project",
