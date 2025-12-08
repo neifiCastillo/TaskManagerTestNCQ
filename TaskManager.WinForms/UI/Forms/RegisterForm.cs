@@ -38,14 +38,17 @@ namespace TaskManager.WinForms.UI
                 _authService.Register(dto);
                 this.Close();
                 SuccessHandler.Show("Usuario registrado correctamente.");
-
-               
             }
             catch (Exception ex)
             {
                 ErrorHandler.Handle(ex);
             }
 
+        }
+
+        private void lblInicio_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
