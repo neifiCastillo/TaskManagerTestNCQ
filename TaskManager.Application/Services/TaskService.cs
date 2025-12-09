@@ -22,9 +22,11 @@ namespace TaskManager.Application.Services
             _taskRepo = taskRepo;
             _userRepo = userRepo;
         }
-
         public IEnumerable<TaskItem> GetTasks(TaskFilter filter)
         {
+            if (filter == null)
+                filter = new TaskFilter();
+
             return _taskRepo.GetAll(filter);
         }
 

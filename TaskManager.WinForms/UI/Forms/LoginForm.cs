@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using TaskManager.Application.Helpers;
 using TaskManager.Application.Services;
 using TaskManager.WinForms.UI.Animations;
 using TaskManager.WinForms.UI.Controls;
@@ -25,6 +26,7 @@ namespace TaskManager.WinForms.UI
             try
             {
                 var user = _authService.Login(txtUsername.Text, txtPassword.Text);
+                SessionManager.SaveSession(user.Id, user.FullName);
                 var main = new MainForm(_taskService, user);
                 main.Show();
                 this.Hide();
@@ -40,5 +42,6 @@ namespace TaskManager.WinForms.UI
             var registerForm = new RegisterForm(_authService);
             registerForm.ShowDialog();
         }
+
     }
 }

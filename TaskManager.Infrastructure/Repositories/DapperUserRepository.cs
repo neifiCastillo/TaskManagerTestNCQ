@@ -5,11 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TaskManager.Infrastructure.Factories;
 using Dapper;
-using Microsoft.Data.Sqlite;
 using TaskManager.Domain.Interfaces;
 using TaskManager.Domain.Entities;
-
-
 
 namespace TaskManager.Infrastructure.Repositories
 {

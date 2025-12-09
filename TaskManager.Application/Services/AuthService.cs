@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using TaskManager.Application.DTOs;
 using TaskManager.Application.Helpers;
 using TaskManager.Domain.Interfaces;
-using TaskManager.Domain.Entities;
 using User = TaskManager.Domain.Entities.User;
 using TaskManager.Domain.Exceptions;
 

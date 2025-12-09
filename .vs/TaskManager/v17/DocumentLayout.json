@@ -1,12 +1,192 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.winforms\\ui\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|solutionrelative:taskmanager.winforms\\ui\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.winforms\\ui\\helpers\\sessiontimeoutmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|solutionrelative:taskmanager.winforms\\ui\\helpers\\sessiontimeoutmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.winforms\\ui\\helpers\\inactivitymonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|solutionrelative:taskmanager.winforms\\ui\\helpers\\inactivitymonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.application\\helpers\\sessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|solutionrelative:taskmanager.application\\helpers\\sessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.application\\factories\\servicefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|solutionrelative:taskmanager.application\\factories\\servicefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.winforms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|solutionrelative:taskmanager.winforms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.winforms\\ui\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|solutionrelative:taskmanager.winforms\\ui\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD813295-D04A-4F94-8D71-D6CCAF98D7A1}|TaskManager.Application\\TaskManager.Application.csproj|solutionrelative:taskmanager.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.winforms\\ui\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|solutionrelative:taskmanager.winforms\\ui\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|c:\\users\\msi\\desktop\\repositorios\\taskmanager\\taskmanager\\taskmanager.winforms\\ui\\forms\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2EBB450F-9D57-4806-B7C5-DCEB49A69E74}|TaskManager.WinForms\\TaskManager.WinForms.csproj|solutionrelative:taskmanager.winforms\\ui\\forms\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SessionTimeoutManager.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Helpers\\SessionTimeoutManager.cs",
+              "RelativeDocumentMoniker": "TaskManager.WinForms\\UI\\Helpers\\SessionTimeoutManager.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Helpers\\SessionTimeoutManager.cs",
+              "RelativeToolTip": "TaskManager.WinForms\\UI\\Helpers\\SessionTimeoutManager.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T02:56:03.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InactivityMonitor.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Helpers\\InactivityMonitor.cs",
+              "RelativeDocumentMoniker": "TaskManager.WinForms\\UI\\Helpers\\InactivityMonitor.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Helpers\\InactivityMonitor.cs",
+              "RelativeToolTip": "TaskManager.WinForms\\UI\\Helpers\\InactivityMonitor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T02:34:48.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "TaskManager.WinForms\\UI\\Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Forms\\LoginForm.cs",
+              "RelativeToolTip": "TaskManager.WinForms\\UI\\Forms\\LoginForm.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAABwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T02:03:33.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SessionManager.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\Helpers\\SessionManager.cs",
+              "RelativeDocumentMoniker": "TaskManager.Application\\Helpers\\SessionManager.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\Helpers\\SessionManager.cs",
+              "RelativeToolTip": "TaskManager.Application\\Helpers\\SessionManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T00:50:57.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ServiceFactory.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\Factories\\ServiceFactory.cs",
+              "RelativeDocumentMoniker": "TaskManager.Application\\Factories\\ServiceFactory.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\Factories\\ServiceFactory.cs",
+              "RelativeToolTip": "TaskManager.Application\\Factories\\ServiceFactory.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwBYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T00:27:39.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\Program.cs",
+              "RelativeDocumentMoniker": "TaskManager.WinForms\\Program.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\Program.cs",
+              "RelativeToolTip": "TaskManager.WinForms\\Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAADIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T00:11:36.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Forms\\MainForm.cs",
+              "RelativeDocumentMoniker": "TaskManager.WinForms\\UI\\Forms\\MainForm.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Forms\\MainForm.cs",
+              "RelativeToolTip": "TaskManager.WinForms\\UI\\Forms\\MainForm.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAACwAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T00:10:30.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "TaskManager.WinForms\\UI\\Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Forms\\LoginForm.cs [Design]",
+              "RelativeToolTip": "TaskManager.WinForms\\UI\\Forms\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T00:05:48.357Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "TaskManager.Application\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.Application\\Services\\UserService.cs",
+              "RelativeToolTip": "TaskManager.Application\\Services\\UserService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T23:23:24.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DashboardForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Forms\\DashboardForm.cs",
+              "RelativeDocumentMoniker": "TaskManager.WinForms\\UI\\Forms\\DashboardForm.cs",
+              "ToolTip": "C:\\Users\\MSI\\Desktop\\repositorios\\TaskManager\\TaskManager\\TaskManager.WinForms\\UI\\Forms\\DashboardForm.cs [Design]",
+              "RelativeToolTip": "TaskManager.WinForms\\UI\\Forms\\DashboardForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T23:03:48.906Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
