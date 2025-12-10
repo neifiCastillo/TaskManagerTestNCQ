@@ -3,12 +3,12 @@ using TaskManager.Application.Helpers;
 using TaskManager.Application.Services;
 using TaskManager.WinForms.UI.Animations;
 using TaskManager.WinForms.UI.Controls;
+using TaskManager.WinForms.UI.Helpers;
 
 namespace TaskManager.WinForms.UI
 {
     public partial class LoginForm : XtraForm
     {
-
         private readonly AuthService _authService;
         private readonly TaskService _taskService;
         public LoginForm(AuthService authService, TaskService taskService)
@@ -24,6 +24,7 @@ namespace TaskManager.WinForms.UI
             this.AcceptButton = btnLogin;
             txtUsername.KeyDown += LoginKeyDown;
             txtPassword.KeyDown += LoginKeyDown;
+            PasswordInputHelper.Attach(txtPassword);
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {

@@ -10,7 +10,6 @@ namespace TaskManager.Infrastructure.Database
 {
     public static class DbInitializer
     {
-
         public static void Initialize(string dbPath, string initScriptPath)
         {
             // If db does not exist → create it

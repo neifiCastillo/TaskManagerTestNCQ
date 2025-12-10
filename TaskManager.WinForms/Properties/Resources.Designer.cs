@@ -83,6 +83,16 @@ namespace TaskManager.WinForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] detail {
+            get {
+                object obj = ResourceManager.GetObject("detail", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] done {
             get {
                 object obj = ResourceManager.GetObject("done", resourceCulture);

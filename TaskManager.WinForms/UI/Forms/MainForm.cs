@@ -18,6 +18,7 @@ using TaskManager.Application.Helpers;
 using TaskManager.Infrastructure.Repositories;
 using TaskManager.Application.Factories;
 using DevExpress.CodeParser;
+using DevExpress.XtraGrid;
 
 namespace TaskManager.WinForms.UI
 {
@@ -26,6 +27,8 @@ namespace TaskManager.WinForms.UI
         private readonly TaskService _taskService;
         private readonly UserDto _currentUser;
         private SessionTimeoutManager _sessionTimeout;
+        private RepositoryItemButtonEdit buttonEdit;
+        private bool _logoutConfirm = false;
         public MainForm(TaskService taskService, UserDto currentUser)
         {
             InitializeComponent();
@@ -34,9 +37,11 @@ namespace TaskManager.WinForms.UI
             _taskService = taskService;
             _currentUser = currentUser;
 
+            buttonEdit = new RepositoryItemButtonEdit();
             ConfigureGrid();
             gridView1.RowStyle += gridView1_RowStyle;
             gridView1.CustomColumnDisplayText += gridView1_CustomColumnDisplayText;
+            CovertToFilterDate();
             LoadFilters();
             LoadUsers();
             LoadTasks();
@@ -53,11 +58,19 @@ namespace TaskManager.WinForms.UI
             gridControl1.DataSource = tasks;
 
             gridView1.PopulateColumns();
+
+            //Allows filtering using the displayed text
+            gridView1.Columns["Status"].FilterMode = ColumnFilterMode.DisplayText;
+            gridView1.Columns["Priority"].FilterMode = ColumnFilterMode.DisplayText;
+
             gridView1.BestFitColumns();
 
+            HideUnnecessaryColumns();
             AddActionButtons();
+            gridView1.CustomRowCellEdit += gridView1_CustomRowCellEdit;
             TranslateColumns();
-            ConfigureNotesColumn();
+            ConfigureDescriptionColumn();
+            ApplyFixedColumnSizes();
         }
         private void TranslateColumns()
         {
@@ -65,11 +78,27 @@ namespace TaskManager.WinForms.UI
 
             gridView1.Columns["Id"].Caption = "ID";
             gridView1.Columns["Description"].Caption = "Descripción";
-            gridView1.Columns["AssignedUserId"].Caption = "Asignado";
+            gridView1.Columns["AssignedUserId"].Caption = "Asignada A";
+            var colAssigned = gridView1.Columns["AssignedUserId"];
+            if (colAssigned != null)
+            {
+                colAssigned.Caption = "Asignada A";
+                colAssigned.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
+                colAssigned.OptionsFilter.AutoFilterCondition =DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+                colAssigned.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            }
             gridView1.Columns["Status"].Caption = "Estado";
             gridView1.Columns["Priority"].Caption = "Prioridad";
             gridView1.Columns["DueDate"].Caption = "Fecha de Compromiso";
-            gridView1.Columns["DueDate"].Width = 200;
+            var colDueDate = gridView1.Columns["DueDate"];
+            if (colDueDate != null)
+            {
+                var filterDateEdit = new RepositoryItemDateEdit();
+                colDueDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+                colDueDate.DisplayFormat.FormatString = "dd/MM/yyyy";
+                colDueDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                filterDateEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            }
             gridView1.Columns["Notes"].Caption = "Notas";
             gridView1.Columns["CreatedAt"].Caption = "Creada";
             gridView1.Columns["UpdatedAt"].Caption = "Actualizada";
@@ -92,39 +121,68 @@ namespace TaskManager.WinForms.UI
             gridView1.FocusRectStyle = DrawFocusRectStyle.RowFocus;
             gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
         }
+        private void HideUnnecessaryColumns()
+        {
+            string[] columnsToHide = { "Id", "Notes", "CreatedAt", "UpdatedAt" };
+
+            foreach (var colName in columnsToHide)
+            {
+                var col = gridView1.Columns[colName];
+                if (col != null)
+                    col.Visible = false;
+            }
+        }
         private void AddActionButtons()
         {
             // If there are no columns yet (first load), we exit
             if (gridView1.Columns.Count == 0)
                 return;
 
-            var buttonEdit = new RepositoryItemButtonEdit();
+            //var buttonEdit = new RepositoryItemButtonEdit();
             buttonEdit.TextEditStyle = TextEditStyles.HideTextEditor;
             buttonEdit.Buttons.Clear();
 
-            buttonEdit.Buttons.Add(new EditorButton(ButtonPredefines.Glyph)
+            var btnEdit = new EditorButton(ButtonPredefines.Glyph)
             {
                 ImageOptions = { Image = ImageHelper.ByteArrayToImage(Properties.Resources.edit) },
-                ToolTip = "Editar"
-            });
+                ToolTip = "Editar",
+                Tag = "EDIT"
+            };
 
-            buttonEdit.Buttons.Add(new EditorButton(ButtonPredefines.Glyph)
+            var btnStart = new EditorButton(ButtonPredefines.Glyph)
             {
                 ImageOptions = { Image = ImageHelper.ByteArrayToImage(Properties.Resources.clock) },
-                ToolTip = "Cambiar estado"
-            });
+                ToolTip = "Iniciar tarea",
+                Tag = "START"
+            };
 
-            buttonEdit.Buttons.Add(new EditorButton(ButtonPredefines.Glyph)
+            var btnDetail = new EditorButton(ButtonPredefines.Glyph)
+            {
+                ImageOptions = { Image = ImageHelper.ByteArrayToImage(Properties.Resources.detail) },
+                ToolTip = "Ver detalles",
+                Tag = "DETAIL"
+            };
+
+            var btnDone = new EditorButton(ButtonPredefines.Glyph)
             {
                 ImageOptions = { Image = ImageHelper.ByteArrayToImage(Properties.Resources.done) },
-                ToolTip = "Marcar como completada"
-            });
+                ToolTip = "Marcar como completada",
+                Tag = "DONE"
+            };
 
-            buttonEdit.Buttons.Add(new EditorButton(ButtonPredefines.Glyph)
+            var btnDelete = new EditorButton(ButtonPredefines.Glyph)
             {
                 ImageOptions = { Image = ImageHelper.ByteArrayToImage(Properties.Resources.delete) },
-                ToolTip = "Eliminar"
-            });
+                ToolTip = "Eliminar",
+                Tag = "DELETE"
+            };
+
+            // saved the buttons in the base repository.
+            buttonEdit.Buttons.Add(btnEdit);
+            buttonEdit.Buttons.Add(btnStart);
+            buttonEdit.Buttons.Add(btnDetail);
+            buttonEdit.Buttons.Add(btnDone);
+            buttonEdit.Buttons.Add(btnDelete);
 
             buttonEdit.ButtonClick += ActionButtons_Click;
 
@@ -141,12 +199,12 @@ namespace TaskManager.WinForms.UI
             colAcciones.ColumnEdit = buttonEdit;
             colAcciones.VisibleIndex = gridView1.Columns.Count;
 
-            //Important: Allow clicking in that column
+            //Allow clicking in that column
             colAcciones.OptionsColumn.AllowEdit = true;
             colAcciones.OptionsColumn.ReadOnly = false;
             colAcciones.ShowButtonMode = ShowButtonModeEnum.ShowAlways;
 
-            //Optional: Mark the remaining columns as read-only
+            //Mark the remaining columns as read-only
             foreach (GridColumn col in gridView1.Columns)
             {
                 if (col.FieldName != "Acciones")
@@ -162,6 +220,53 @@ namespace TaskManager.WinForms.UI
             colAcciones.AppearanceCell.Options.UseBackColor = true;
             colAcciones.AppearanceCell.Options.UseForeColor = true;
         }
+        private void gridView1_CustomRowCellEdit(object sender, CustomRowCellEditEventArgs e)
+        {
+            if (e.Column.FieldName != "Acciones") return;
+
+            var row = gridView1.GetRow(e.RowHandle) as TaskItem;
+            if (row == null) return;
+
+            var clone = new RepositoryItemButtonEdit();
+            clone.TextEditStyle = TextEditStyles.HideTextEditor;
+            clone.ButtonClick += ActionButtons_Click; 
+
+            clone.Buttons.Clear();
+
+            // Original buttons
+            var btnEdit = buttonEdit.Buttons[0];
+            var btnStart = buttonEdit.Buttons[1];
+            var btnDetail = buttonEdit.Buttons[2];
+            var btnDone = buttonEdit.Buttons[3];
+            var btnDelete = buttonEdit.Buttons[4];
+
+            switch (row.Status)
+            {
+                case TaskStatus.Pending:
+                    bool overdue = row.DueDate.Date < DateTime.Today;
+
+                    clone.Buttons.Add(btnEdit);
+
+                    if (!overdue) 
+                        clone.Buttons.Add(btnStart);
+
+                    clone.Buttons.Add(btnDetail);
+                    clone.Buttons.Add(btnDelete);
+                    break;
+
+                case TaskStatus.InProgress:
+                    clone.Buttons.Add(btnDetail);
+                    clone.Buttons.Add(btnDone);
+                    break;
+
+                case TaskStatus.Done:
+                    clone.Buttons.Add(btnDetail);
+                    clone.Buttons.Add(btnDelete);
+                    break;
+            }
+
+            e.RepositoryItem = clone;
+        }
         private void ActionButtons_Click(object sender, ButtonPressedEventArgs e)
         {
             int rowHandle = gridView1.FocusedRowHandle;
@@ -170,26 +275,30 @@ namespace TaskManager.WinForms.UI
             var row = gridView1.GetRow(rowHandle) as TaskItem;
             if (row == null) return;
 
-            int index = e.Button.Index;
+            if (e.Button.Tag is not string action || string.IsNullOrWhiteSpace(action))
+                return;
 
-            switch (index)
+            switch (action)
             {
-                case 0:
+                case "EDIT":
                     btnEdit_Click(row, EventArgs.Empty);
                     break;
 
-                case 1:
+                case "START":
                     ChangeTaskStatus(row);
                     break;
 
-                case 2:
+                case "DETAIL":
+                    ShowTaskDetails(row);
+                    break;
+
+                case "DONE":
                     MarkAsDone(row);
                     break;
 
-                case 3:
+                case "DELETE":
                     btnDelete_Click(row, EventArgs.Empty);
                     break;
-
             }
         }
         private void MarkAsDone(TaskItem row)
@@ -229,16 +338,27 @@ namespace TaskManager.WinForms.UI
                     break;
             }
         }
+        private void ShowTaskDetails(TaskItem task)
+        {
+            var detailsForm = new TaskDetailsForm(task, _taskService);
+            detailsForm.ShowDialog();
+        }
         private void LoadFilters()
         {
+            // Status
             comboStatus.Properties.Items.Clear();
             comboStatus.Properties.Items.Add("Todos");
-            comboStatus.Properties.Items.AddRange(Enum.GetNames(typeof(TaskStatus)));
+            comboStatus.Properties.Items.Add("Pendiente");
+            comboStatus.Properties.Items.Add("En proceso");
+            comboStatus.Properties.Items.Add("Completada");
             comboStatus.SelectedIndex = 0;
 
+            // Priority
             comboPriority.Properties.Items.Clear();
             comboPriority.Properties.Items.Add("Todos");
-            comboPriority.Properties.Items.AddRange(Enum.GetNames(typeof(TaskPriority)));
+            comboPriority.Properties.Items.Add("Alta");
+            comboPriority.Properties.Items.Add("Media");
+            comboPriority.Properties.Items.Add("Baja");
             comboPriority.SelectedIndex = 0;
         }
         private void LoadUsers()
@@ -248,11 +368,11 @@ namespace TaskManager.WinForms.UI
             users.Insert(0, new UserDto
             {
                 Id = 0,
-                FullName = "Todos"
+                Username = "Todos"
             });
 
             gridLookUpEditUsers.Properties.DataSource = users;
-            gridLookUpEditUsers.Properties.DisplayMember = "FullName";
+            gridLookUpEditUsers.Properties.DisplayMember = "Username";
             gridLookUpEditUsers.Properties.ValueMember = "Id";
 
             var view = (GridView)gridLookUpEditUsers.Properties.PopupView;
@@ -262,7 +382,7 @@ namespace TaskManager.WinForms.UI
             view.OptionsView.ShowIndicator = false;
 
             view.Columns.AddVisible("Id", "ID").Width = 50;
-            view.Columns.AddVisible("FullName", "Nombre").Width = 200;
+            view.Columns.AddVisible("Username", "Username").Width = 200;
 
             gridLookUpEditUsers.EditValue = 0;
         }
@@ -271,12 +391,24 @@ namespace TaskManager.WinForms.UI
             var f = new TaskFilter();
 
             // Status
-            if (comboStatus.SelectedIndex > 0 && comboStatus.SelectedItem is string statusValue)
-                f.Status = Enum.Parse<TaskStatus>(statusValue);
+            if (comboStatus.SelectedIndex > 0)
+                f.Status = comboStatus.SelectedItem.ToString() switch
+                {
+                    "Pendiente" => TaskStatus.Pending,
+                    "En proceso" => TaskStatus.InProgress,
+                    "Completada" => TaskStatus.Done,
+                    _ => null
+                };
 
             // Priority
-            if (comboPriority.SelectedIndex > 0 && comboPriority.SelectedItem is string priorityValue)
-                f.Priority = Enum.Parse<TaskPriority>(priorityValue);
+            if (comboPriority.SelectedIndex > 0)
+                f.Priority = comboPriority.SelectedItem.ToString() switch
+                {
+                    "Alta" => TaskPriority.High,
+                    "Media" => TaskPriority.Medium,
+                    "Baja" => TaskPriority.Low,
+                    _ => null
+                };
 
             // User
             int userId = Convert.ToInt32(gridLookUpEditUsers.EditValue);
@@ -423,6 +555,11 @@ namespace TaskManager.WinForms.UI
         }
         private void btnClearFilter_Click(object sender, EventArgs e)
         {
+            ClearFilters();
+            LoadTasks();
+        }
+        private void ClearFilters()
+        {
             gridLookUpEditUsers.EditValue = 0;
             comboStatus.SelectedIndex = 0;
             comboPriority.SelectedIndex = 0;
@@ -431,8 +568,6 @@ namespace TaskManager.WinForms.UI
             dateTo.EditValue = null;
 
             txtSearch.Text = string.Empty;
-
-            LoadTasks();
         }
         private void gridView1_RowStyle(object sender, RowStyleEventArgs e)
         {
@@ -488,7 +623,7 @@ namespace TaskManager.WinForms.UI
             }
         }
 
-        private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        private void gridView1_CustomColumnDisplayText(object sender, CustomColumnDisplayTextEventArgs e)
         {
             if (e.Column.FieldName == "AssignedUserId")
             {
@@ -497,13 +632,54 @@ namespace TaskManager.WinForms.UI
                     e.DisplayText = "Sin asignar";
                     return;
                 }
+                if (!int.TryParse(e.Value.ToString(), out int userId))
+                {
+                    e.DisplayText = e.Value.ToString();
+                    return;
+                }
 
                 var users = _taskService.GetUsers().ToList();
-                int userId = Convert.ToInt32(e.Value);
-
                 var user = users.FirstOrDefault(u => u.Id == userId);
 
-                e.DisplayText = user != null ? user.FullName : "Sin asignar";
+                e.DisplayText = user != null ? user.Username : "Sin asignar";
+                return;
+            }
+            if (e.Column.FieldName == "Status")
+            {
+                var val = e.Value?.ToString();
+                if (string.IsNullOrEmpty(val)) return;
+
+                switch (val)
+                {
+                    case "Pending":
+                        e.DisplayText = "Pendiente";
+                        break;
+                    case "InProgress":
+                        e.DisplayText = "En proceso";
+                        break;
+                    case "Done":
+                        e.DisplayText = "Completada";
+                        break;
+                }
+            }
+
+            if (e.Column.FieldName == "Priority")
+            {
+                var val = e.Value?.ToString();
+                if (string.IsNullOrEmpty(val)) return;
+
+                switch (val)
+                {
+                    case "High":
+                        e.DisplayText = "Alta";
+                        break;
+                    case "Medium":
+                        e.DisplayText = "Media";
+                        break;
+                    case "Low":
+                        e.DisplayText = "Baja";
+                        break;
+                }
             }
         }
         private void BuildLegend()
@@ -512,10 +688,11 @@ namespace TaskManager.WinForms.UI
                 panelLegend,
                 new[]
                 {
-            (ImageHelper.ByteArrayToImage(Properties.Resources.edit)!, "Editar tarea"),
-            (ImageHelper.ByteArrayToImage(Properties.Resources.clock)!, "Poner tarea en proceso"),
-            (ImageHelper.ByteArrayToImage(Properties.Resources.done)!, "Completar tarea"),
-            (ImageHelper.ByteArrayToImage(Properties.Resources.delete)!, "Eliminar tarea")
+            (ImageHelper.ByteArrayToImage(Properties.Resources.edit)!, "Editar"),
+            (ImageHelper.ByteArrayToImage(Properties.Resources.clock)!, "Iniciar tarea"),
+            (ImageHelper.ByteArrayToImage(Properties.Resources.detail)!, "Ver detalles"),
+            (ImageHelper.ByteArrayToImage(Properties.Resources.done)!, "Marcar como completada"),
+            (ImageHelper.ByteArrayToImage(Properties.Resources.delete)!, "Eliminar")
                 }
             );
         }
@@ -526,51 +703,105 @@ namespace TaskManager.WinForms.UI
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExitToLogin(null);
+            if (ConfirmExit(null))
+                this.Close(); ;
         }
 
-        private void ExitToLogin(FormClosingEventArgs? e)
+        private void ExitToLogin()
         {
+            SessionManager.ClearSession();
 
-            if (XtraMessageBox.Show("¿Desea salir del sistema?",
-                "Confirmación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                SessionManager.ClearSession();
-                var services = ServiceFactory.Create();
-                var login = new LoginForm(services.Auth, services.Tasks);
-                login.Show();
-            }
-            else
-            {
-                if (e != null)
-                {
-                    e.Cancel = true;
-                }
-            }
+            var services = ServiceFactory.Create();
+            var login = new LoginForm(services.Auth, services.Tasks);
+
+            login.Show();
         }
-
-        private void ConfigureNotesColumn()
+        private void ConfigureDescriptionColumn()
         {
-            var colNotes = gridView1.Columns["Notes"];
-            if (colNotes == null) return;
+            var colDesc = gridView1.Columns["Description"];
+            if (colDesc == null) return;
 
             // Multi-line editor
             var memo = new RepositoryItemMemoEdit();
             gridControl1.RepositoryItems.Add(memo);
 
-            colNotes.ColumnEdit = memo;
+            colDesc.ColumnEdit = memo;
 
             // Text and row adjustment
-            colNotes.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            colDesc.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             gridView1.OptionsView.RowAutoHeight = true;
+        }
+
+        private void CovertToFilterDate()
+        {
+            dateFrom.Properties.Mask.EditMask = "dd/MM/yyyy";
+            dateFrom.Properties.Mask.UseMaskAsDisplayFormat = true;
+            dateFrom.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            dateFrom.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            dateFrom.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            dateFrom.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+
+            dateTo.Properties.Mask.EditMask = "dd/MM/yyyy";
+            dateTo.Properties.Mask.UseMaskAsDisplayFormat = true;
+            dateTo.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            dateTo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            dateTo.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            dateTo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+
+        }
+        private void ApplyFixedColumnSizes()
+        {
+            foreach (GridColumn col in gridView1.Columns)
+            {
+                col.OptionsColumn.FixedWidth = true;       
+                col.OptionsColumn.AllowSize = false;      
+                gridView1.Columns["Description"].Width = 250;
+                gridView1.Columns["AssignedUserId"].Width = 220;
+                gridView1.Columns["Status"].Width = 160;
+                gridView1.Columns["Priority"].Width = 160;
+                gridView1.Columns["DueDate"].Width = 250;
+                gridView1.Columns["Acciones"].Width = 220;
+
+            }
+
+            gridView1.OptionsCustomization.AllowColumnResizing = false;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ExitToLogin(e);
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                ConfirmExit(e);
+            }
         }
-    }
+        private bool ConfirmExit(FormClosingEventArgs? e)
+        {
+            if (_logoutConfirm)
+                return true;
 
+            var result = XtraMessageBox.Show(
+                "¿Desea salir del sistema?",
+                "Confirmación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                _logoutConfirm = true;
+
+                ExitToLogin(); 
+
+                return true;  
+            }
+            else
+            {
+                if (e != null)
+                    e.Cancel = true;
+
+                return false;
+            }
+
+        }
+
+    }
 }

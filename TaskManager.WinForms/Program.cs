@@ -41,14 +41,15 @@ namespace TaskManager.WinForms
             {
                 var diff = DateTime.Now - session.LoginTime;
 
-                if (diff.TotalHours <= SessionManager.SessionDurationSeconds)
+                // Session within the allowed time of minutes for testing
+                if (diff.TotalMinutes <= SessionManager.SessionDuration)
                 {
                    
                     var user = services.Users.GetById(session.UserId);
-                    if (user is null)
+                    if (user != null)
                     {
-                        SessionManager.ClearSession();
-                        System.Windows.Forms.Application.Run(new LoginForm(services.Auth, services.Tasks));
+                       
+                        System.Windows.Forms.Application.Run(new MainForm(services.Tasks, user));
                         return;
                     }
                 }

@@ -19,7 +19,7 @@ namespace TaskManager.WinForms.UI.Helpers
 
             _monitor = new InactivityMonitor(
                 form,
-                SessionManager.InactivityTimeoutSeconds,
+                SessionManager.InactivityTimeout,
                 OnSessionTimeout
             );
         }
@@ -38,8 +38,6 @@ namespace TaskManager.WinForms.UI.Helpers
             var services = ServiceFactory.Create();
 
             var login = new LoginForm(services.Auth, services.Tasks);
-            login.Show();
-
             _currentForm.Close();
         }
     }
