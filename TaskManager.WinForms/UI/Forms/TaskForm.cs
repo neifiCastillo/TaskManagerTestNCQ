@@ -1,14 +1,5 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using TaskManager.Application.DTOs;
 using TaskManager.Application.Services;
 using TaskManager.Domain.Enums;
@@ -22,7 +13,7 @@ namespace TaskManager.WinForms.UI
     {
         private readonly TaskService _taskService;
         private readonly UserDto _currentUser;
-        private readonly TaskDto _editingTask;
+        private readonly TaskDto? _editingTask;
 
         //Builder Create
         public TaskForm(TaskService taskService, UserDto user)
@@ -64,7 +55,7 @@ namespace TaskManager.WinForms.UI
             gridLookUpUsers.Properties.DisplayMember = "FullName";
             gridLookUpUsers.Properties.ValueMember = "Id";
 
-            var view = gridLookUpUsers.Properties.PopupView as GridView;
+            var view = (GridView)gridLookUpUsers.Properties.PopupView;
             view.Columns.Clear();
             view.Columns.AddVisible("FullName", "Usuario");
             view.OptionsView.ShowIndicator = false;
@@ -76,7 +67,6 @@ namespace TaskManager.WinForms.UI
             if (_editingTask == null)
                 gridLookUpUsers.EditValue = _currentUser.Id;
         }
-
         private void LoadTask()
         {
             if (_editingTask == null)
@@ -91,7 +81,6 @@ namespace TaskManager.WinForms.UI
 
             btnSave.Text = "Editar";
         }
-
         private bool ValidateForm()
         {
             if (string.IsNullOrWhiteSpace(txtDescription.Text))
@@ -123,13 +112,10 @@ namespace TaskManager.WinForms.UI
 
             return true;
         }
-
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!ValidateForm()) return;

@@ -12,7 +12,7 @@ namespace TaskManager.WinForms.UI.Helpers
         /// <summary>
         /// Converts a byte array to an image: System.Drawing.Image
         /// </summary>
-        public static Image ByteArrayToImage(byte[] bytes)
+        public static Image? ByteArrayToImage(byte[] bytes)
         {
             if (bytes == null || bytes.Length == 0)
                 return null;

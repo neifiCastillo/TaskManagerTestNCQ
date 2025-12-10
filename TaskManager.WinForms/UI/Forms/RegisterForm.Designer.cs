@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
-            labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            lblpasswordComfir = new DevExpress.XtraEditors.LabelControl();
             txtConfirmPassword = new DevExpress.XtraEditors.TextEdit();
             txtFullName = new DevExpress.XtraEditors.TextEdit();
-            labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            lbluserComplet = new DevExpress.XtraEditors.LabelControl();
             txtPassword = new DevExpress.XtraEditors.TextEdit();
             txtUsername = new DevExpress.XtraEditors.TextEdit();
-            labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            lblpassword = new DevExpress.XtraEditors.LabelControl();
             btnSave = new DevExpress.XtraEditors.SimpleButton();
-            labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            lblInicio = new DevExpress.XtraEditors.LabelControl();
+            lbluser = new DevExpress.XtraEditors.LabelControl();
+            lblcrearAcount = new DevExpress.XtraEditors.LabelControl();
+            lblsubCreat = new DevExpress.XtraEditors.LabelControl();
+            lblquestion = new DevExpress.XtraEditors.LabelControl();
+            lblInit = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)txtConfirmPassword.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtPassword.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtUsername.Properties).BeginInit();
             SuspendLayout();
             // 
-            // labelControl4
+            // lblpasswordComfir
             // 
-            labelControl4.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            labelControl4.Appearance.Options.UseFont = true;
-            labelControl4.Location = new Point(127, 310);
-            labelControl4.Name = "labelControl4";
-            labelControl4.Size = new Size(163, 20);
-            labelControl4.TabIndex = 23;
-            labelControl4.Text = "Comfirmar Contraseña:";
+            lblpasswordComfir.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblpasswordComfir.Appearance.Options.UseFont = true;
+            lblpasswordComfir.Location = new Point(127, 310);
+            lblpasswordComfir.Name = "lblpasswordComfir";
+            lblpasswordComfir.Size = new Size(163, 20);
+            lblpasswordComfir.TabIndex = 23;
+            lblpasswordComfir.Text = "Comfirmar Contraseña:";
             // 
             // txtConfirmPassword
             // 
@@ -64,9 +64,10 @@
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.Properties.Appearance.Font = new Font("Segoe UI", 12F);
             txtConfirmPassword.Properties.Appearance.Options.UseFont = true;
+            txtConfirmPassword.Properties.MaxLength = 10;
             txtConfirmPassword.Properties.UseSystemPasswordChar = true;
             txtConfirmPassword.Size = new Size(259, 28);
-            txtConfirmPassword.TabIndex = 22;
+            txtConfirmPassword.TabIndex = 4;
             // 
             // txtFullName
             // 
@@ -74,18 +75,19 @@
             txtFullName.Name = "txtFullName";
             txtFullName.Properties.Appearance.Font = new Font("Segoe UI", 12F);
             txtFullName.Properties.Appearance.Options.UseFont = true;
+            txtFullName.Properties.MaxLength = 50;
             txtFullName.Size = new Size(259, 28);
-            txtFullName.TabIndex = 21;
+            txtFullName.TabIndex = 2;
             // 
-            // labelControl3
+            // lbluserComplet
             // 
-            labelControl3.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            labelControl3.Appearance.Options.UseFont = true;
-            labelControl3.Location = new Point(127, 172);
-            labelControl3.Name = "labelControl3";
-            labelControl3.Size = new Size(132, 20);
-            labelControl3.TabIndex = 20;
-            labelControl3.Text = "Nombre completo:";
+            lbluserComplet.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lbluserComplet.Appearance.Options.UseFont = true;
+            lbluserComplet.Location = new Point(127, 172);
+            lbluserComplet.Name = "lbluserComplet";
+            lbluserComplet.Size = new Size(132, 20);
+            lbluserComplet.TabIndex = 20;
+            lbluserComplet.Text = "Nombre completo:";
             // 
             // txtPassword
             // 
@@ -93,9 +95,10 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Properties.Appearance.Font = new Font("Segoe UI", 12F);
             txtPassword.Properties.Appearance.Options.UseFont = true;
+            txtPassword.Properties.MaxLength = 10;
             txtPassword.Properties.UseSystemPasswordChar = true;
             txtPassword.Size = new Size(259, 28);
-            txtPassword.TabIndex = 19;
+            txtPassword.TabIndex = 3;
             // 
             // txtUsername
             // 
@@ -103,18 +106,19 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Properties.Appearance.Font = new Font("Segoe UI", 12F);
             txtUsername.Properties.Appearance.Options.UseFont = true;
+            txtUsername.Properties.MaxLength = 10;
             txtUsername.Size = new Size(259, 28);
-            txtUsername.TabIndex = 18;
+            txtUsername.TabIndex = 1;
             // 
-            // labelControl2
+            // lblpassword
             // 
-            labelControl2.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            labelControl2.Appearance.Options.UseFont = true;
-            labelControl2.Location = new Point(127, 240);
-            labelControl2.Name = "labelControl2";
-            labelControl2.Size = new Size(83, 20);
-            labelControl2.TabIndex = 17;
-            labelControl2.Text = "Contraseña:";
+            lblpassword.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblpassword.Appearance.Options.UseFont = true;
+            lblpassword.Location = new Point(127, 240);
+            lblpassword.Name = "lblpassword";
+            lblpassword.Size = new Size(83, 20);
+            lblpassword.TabIndex = 17;
+            lblpassword.Text = "Contraseña:";
             // 
             // btnSave
             // 
@@ -124,88 +128,89 @@
             btnSave.Appearance.Options.UseBackColor = true;
             btnSave.Appearance.Options.UseFont = true;
             btnSave.Appearance.Options.UseForeColor = true;
+            btnSave.Cursor = Cursors.Hand;
             btnSave.Location = new Point(127, 395);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(259, 45);
-            btnSave.TabIndex = 16;
+            btnSave.TabIndex = 5;
             btnSave.Text = "Registrarme  ";
             btnSave.Click += btnSave_Click;
             // 
-            // labelControl1
+            // lbluser
             // 
-            labelControl1.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            labelControl1.Appearance.Options.UseFont = true;
-            labelControl1.Location = new Point(127, 104);
-            labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(139, 20);
-            labelControl1.TabIndex = 15;
-            labelControl1.Text = "Nombre de usuario:";
+            lbluser.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lbluser.Appearance.Options.UseFont = true;
+            lbluser.Location = new Point(127, 104);
+            lbluser.Name = "lbluser";
+            lbluser.Size = new Size(139, 20);
+            lbluser.TabIndex = 15;
+            lbluser.Text = "Nombre de usuario:";
             // 
-            // labelControl5
+            // lblcrearAcount
             // 
-            labelControl5.Appearance.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl5.Appearance.ForeColor = Color.SeaGreen;
-            labelControl5.Appearance.Options.UseFont = true;
-            labelControl5.Appearance.Options.UseForeColor = true;
-            labelControl5.Location = new Point(124, 0);
-            labelControl5.Name = "labelControl5";
-            labelControl5.Size = new Size(262, 47);
-            labelControl5.TabIndex = 24;
-            labelControl5.Text = "CREAR CUENTA";
+            lblcrearAcount.Appearance.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblcrearAcount.Appearance.ForeColor = Color.SeaGreen;
+            lblcrearAcount.Appearance.Options.UseFont = true;
+            lblcrearAcount.Appearance.Options.UseForeColor = true;
+            lblcrearAcount.Location = new Point(124, 0);
+            lblcrearAcount.Name = "lblcrearAcount";
+            lblcrearAcount.Size = new Size(262, 47);
+            lblcrearAcount.TabIndex = 24;
+            lblcrearAcount.Text = "CREAR CUENTA";
             // 
-            // labelControl6
+            // lblsubCreat
             // 
-            labelControl6.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelControl6.Appearance.Options.UseFont = true;
-            labelControl6.Location = new Point(163, 48);
-            labelControl6.Name = "labelControl6";
-            labelControl6.Size = new Size(181, 21);
-            labelControl6.TabIndex = 25;
-            labelControl6.Text = "Regístrate para continuar ";
+            lblsubCreat.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblsubCreat.Appearance.Options.UseFont = true;
+            lblsubCreat.Location = new Point(163, 48);
+            lblsubCreat.Name = "lblsubCreat";
+            lblsubCreat.Size = new Size(181, 21);
+            lblsubCreat.TabIndex = 25;
+            lblsubCreat.Text = "Regístrate para continuar ";
             // 
-            // labelControl7
+            // lblquestion
             // 
-            labelControl7.Appearance.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelControl7.Appearance.ForeColor = Color.Gray;
-            labelControl7.Appearance.Options.UseFont = true;
-            labelControl7.Appearance.Options.UseForeColor = true;
-            labelControl7.Location = new Point(153, 471);
-            labelControl7.Name = "labelControl7";
-            labelControl7.Size = new Size(110, 17);
-            labelControl7.TabIndex = 26;
-            labelControl7.Text = "¿Ya tienes cuenta? ";
+            lblquestion.Appearance.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblquestion.Appearance.ForeColor = Color.Gray;
+            lblquestion.Appearance.Options.UseFont = true;
+            lblquestion.Appearance.Options.UseForeColor = true;
+            lblquestion.Location = new Point(153, 471);
+            lblquestion.Name = "lblquestion";
+            lblquestion.Size = new Size(110, 17);
+            lblquestion.TabIndex = 26;
+            lblquestion.Text = "¿Ya tienes cuenta? ";
             // 
-            // lblInicio
+            // lblInit
             // 
-            lblInicio.Appearance.Font = new Font("Segoe UI", 9.75F);
-            lblInicio.Appearance.ForeColor = SystemColors.MenuHighlight;
-            lblInicio.Appearance.Options.UseFont = true;
-            lblInicio.Appearance.Options.UseForeColor = true;
-            lblInicio.Location = new Point(267, 471);
-            lblInicio.Name = "lblInicio";
-            lblInicio.Size = new Size(70, 17);
-            lblInicio.TabIndex = 27;
-            lblInicio.Text = "Inicia sesión";
-            lblInicio.Click += lblInicio_Click;
+            lblInit.Appearance.Font = new Font("Segoe UI", 9.75F);
+            lblInit.Appearance.ForeColor = SystemColors.MenuHighlight;
+            lblInit.Appearance.Options.UseFont = true;
+            lblInit.Appearance.Options.UseForeColor = true;
+            lblInit.Location = new Point(267, 471);
+            lblInit.Name = "lblInit";
+            lblInit.Size = new Size(70, 17);
+            lblInit.TabIndex = 27;
+            lblInit.Text = "Inicia sesión";
+            lblInit.Click += lblInit_Click;
             // 
             // RegisterForm
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(509, 540);
-            Controls.Add(lblInicio);
-            Controls.Add(labelControl7);
-            Controls.Add(labelControl6);
-            Controls.Add(labelControl5);
-            Controls.Add(labelControl4);
+            Controls.Add(lblInit);
+            Controls.Add(lblquestion);
+            Controls.Add(lblsubCreat);
+            Controls.Add(lblcrearAcount);
+            Controls.Add(lblpasswordComfir);
             Controls.Add(txtConfirmPassword);
             Controls.Add(txtFullName);
-            Controls.Add(labelControl3);
+            Controls.Add(lbluserComplet);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
-            Controls.Add(labelControl2);
+            Controls.Add(lblpassword);
             Controls.Add(btnSave);
-            Controls.Add(labelControl1);
+            Controls.Add(lbluser);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             IconOptions.Image = (Image)resources.GetObject("RegisterForm.IconOptions.Image");
             MaximizeBox = false;
@@ -221,18 +226,18 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl lblpasswordComfir;
         private DevExpress.XtraEditors.TextEdit txtConfirmPassword;
         private DevExpress.XtraEditors.TextEdit txtFullName;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl lbluserComplet;
         private DevExpress.XtraEditors.TextEdit txtPassword;
         private DevExpress.XtraEditors.TextEdit txtUsername;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lblpassword;
         private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl lblInicio;
+        private DevExpress.XtraEditors.LabelControl lbluser;
+        private DevExpress.XtraEditors.LabelControl lblcrearAcount;
+        private DevExpress.XtraEditors.LabelControl lblsubCreat;
+        private DevExpress.XtraEditors.LabelControl lblquestion;
+        private DevExpress.XtraEditors.LabelControl lblInit;
     }
 }

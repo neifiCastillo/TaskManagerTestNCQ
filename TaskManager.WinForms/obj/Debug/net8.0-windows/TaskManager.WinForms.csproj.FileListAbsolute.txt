@@ -199,3 +199,5 @@ C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\o
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.Application.dll
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\TaskManager.Application.pdb
 C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\TaskManager.WinForms.Properties.Resources.resources
+C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\obj\Debug\net8.0-windows\TaskManager.WinForms.UI.Forms.DashboardForm.resources
+C:\Users\MSI\Desktop\repositorios\TaskManager\TaskManager\TaskManager.WinForms\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
