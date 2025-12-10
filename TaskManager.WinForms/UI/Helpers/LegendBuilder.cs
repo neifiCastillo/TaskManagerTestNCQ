@@ -33,7 +33,7 @@ namespace TaskManager.WinForms.UI.Helpers
             container.Dock = DockStyle.Fill;
             container.WrapContents = false;
             container.AutoScroll = true;
-            container.Padding = new Padding(5, 25, 0, 0);
+            container.Padding = new Padding(5, 25, 0, 25);
 
             panel.Controls.Add(container);
 
@@ -47,28 +47,29 @@ namespace TaskManager.WinForms.UI.Helpers
         {
             Panel p = new Panel
             {
-                Width = 230,
-                Height = 40,
-                Margin = new Padding(5, 5, 0, 5)
+                Width = 300,
+                Height = 28,
+                Margin = new Padding(2, 0, 2, 0)
             };
 
             PictureEdit pic = new PictureEdit
             {
                 Image = icon,
+                Size = new Size(20, 20),
+                Location = new Point(5, 8),
                 Properties =
                 {
                     BorderStyle = BorderStyles.NoBorder,
                     Appearance = { BackColor = Color.Transparent },
-                    SizeMode = PictureSizeMode.Squeeze
-                },
-                Size = new Size(32, 32),
-                Location = new Point(5, 4)
+                    SizeMode = PictureSizeMode.Stretch
+                }
             };
 
             LabelControl lbl = new LabelControl
             {
                 Text = text,
-                Location = new Point(45, 10),
+                AutoSizeMode = LabelAutoSizeMode.Horizontal,
+                Location = new Point(35, 10),
                 Font = new Font("Segoe UI", 10)
             };
 
@@ -77,5 +78,6 @@ namespace TaskManager.WinForms.UI.Helpers
 
             return p;
         }
+
     }
 }

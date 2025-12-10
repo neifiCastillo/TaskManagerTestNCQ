@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             lblpasswordComfir = new DevExpress.XtraEditors.LabelControl();
             txtConfirmPassword = new DevExpress.XtraEditors.TextEdit();
@@ -42,10 +43,12 @@
             lblsubCreat = new DevExpress.XtraEditors.LabelControl();
             lblquestion = new DevExpress.XtraEditors.LabelControl();
             lblInit = new DevExpress.XtraEditors.LabelControl();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)txtConfirmPassword.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtPassword.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtUsername.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // lblpasswordComfir
@@ -193,6 +196,10 @@
             lblInit.Text = "Inicia sesión";
             lblInit.Click += lblInit_Click;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // RegisterForm
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
@@ -220,6 +227,7 @@
             ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtPassword.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtUsername.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -239,5 +247,6 @@
         private DevExpress.XtraEditors.LabelControl lblsubCreat;
         private DevExpress.XtraEditors.LabelControl lblquestion;
         private DevExpress.XtraEditors.LabelControl lblInit;
+        private ErrorProvider errorProvider1;
     }
 }

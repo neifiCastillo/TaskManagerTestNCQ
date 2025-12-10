@@ -92,41 +92,36 @@
             // 
             layoutControl1.Controls.Add(txtDescription);
             layoutControl1.Controls.Add(gridLookUpEdit1);
-            layoutControl1.Location = new Point(4, 48);
-            layoutControl1.Margin = new Padding(4, 4, 4, 4);
+            layoutControl1.Location = new Point(3, 39);
             layoutControl1.Name = "layoutControl1";
             layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new Rectangle(978, 174, 650, 400);
             layoutControl1.Root = Root;
-            layoutControl1.Size = new Size(555, 55);
+            layoutControl1.Size = new Size(476, 45);
             layoutControl1.TabIndex = 0;
             layoutControl1.Text = "layoutControl1";
             // 
             // txtDescription
             // 
-            txtDescription.Location = new Point(109, 14);
-            txtDescription.Margin = new Padding(4, 4, 4, 4);
+            txtDescription.Location = new Point(86, 10);
             txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(432, 22);
+            txtDescription.Size = new Size(379, 20);
             txtDescription.StyleController = layoutControl1;
             txtDescription.TabIndex = 1;
             // 
             // gridLookUpEdit1
             // 
-            gridLookUpEdit1.Location = new Point(485, 15);
-            gridLookUpEdit1.Margin = new Padding(4, 4, 4, 4);
+            gridLookUpEdit1.Location = new Point(416, 12);
             gridLookUpEdit1.Name = "gridLookUpEdit1";
             gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             gridLookUpEdit1.Properties.PopupView = gridView1;
-            gridLookUpEdit1.Size = new Size(58, 22);
+            gridLookUpEdit1.Size = new Size(50, 20);
             gridLookUpEdit1.StyleController = layoutControl1;
             gridLookUpEdit1.TabIndex = 28;
             // 
             // gridView1
             // 
-            gridView1.DetailHeight = 431;
             gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             gridView1.Name = "gridView1";
-            gridView1.OptionsEditForm.PopupEditFormWidth = 933;
             gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             gridView1.OptionsView.ShowGroupPanel = false;
             // 
@@ -136,7 +131,7 @@
             Root.GroupBordersVisible = false;
             Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem1 });
             Root.Name = "Root";
-            Root.Size = new Size(555, 55);
+            Root.Size = new Size(476, 45);
             Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -146,26 +141,26 @@
             layoutControlItem1.Control = txtDescription;
             layoutControlItem1.Location = new Point(0, 0);
             layoutControlItem1.Name = "layoutControlItem1";
-            layoutControlItem1.Size = new Size(531, 31);
+            layoutControlItem1.Size = new Size(458, 29);
             layoutControlItem1.Text = "Descripción:";
-            layoutControlItem1.TextSize = new Size(81, 20);
+            layoutControlItem1.TextSize = new Size(65, 15);
             // 
             // gridLookUpUsers
             // 
-            gridLookUpUsers.Location = new Point(89, 66);
-            gridLookUpUsers.Margin = new Padding(4, 4, 4, 4);
+            gridLookUpUsers.Location = new Point(69, 58);
             gridLookUpUsers.Name = "gridLookUpUsers";
             gridLookUpUsers.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             gridLookUpUsers.Properties.PopupView = gridLookUpEdit1View;
-            gridLookUpUsers.Size = new Size(452, 22);
+            gridLookUpUsers.Size = new Size(396, 20);
             gridLookUpUsers.StyleController = layoutControl5;
             gridLookUpUsers.TabIndex = 4;
             // 
             // gridLookUpEdit1View
             // 
-            gridLookUpEdit1View.DetailHeight = 373;
+            gridLookUpEdit1View.DetailHeight = 303;
             gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            gridLookUpEdit1View.OptionsEditForm.PopupEditFormWidth = 686;
             gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
@@ -174,52 +169,45 @@
             layoutControl5.Controls.Add(gridLookUpStatus);
             layoutControl5.Controls.Add(gridLookUpUsers);
             layoutControl5.Controls.Add(gridLookUpPriority);
-            layoutControl5.Location = new Point(2, 96);
-            layoutControl5.Margin = new Padding(4, 4, 4, 4);
+            layoutControl5.Location = new Point(2, 78);
             layoutControl5.Name = "layoutControl5";
             layoutControl5.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new Rectangle(739, 12, 650, 400);
             layoutControl5.Root = layoutControlGroup4;
-            layoutControl5.Size = new Size(555, 126);
+            layoutControl5.Size = new Size(476, 102);
             layoutControl5.TabIndex = 8;
             layoutControl5.Text = "layoutControl5";
             // 
             // gridLookUpStatus
             // 
-            gridLookUpStatus.Location = new Point(89, 40);
-            gridLookUpStatus.Margin = new Padding(4, 4, 4, 4);
+            gridLookUpStatus.Location = new Point(69, 34);
             gridLookUpStatus.Name = "gridLookUpStatus";
             gridLookUpStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             gridLookUpStatus.Properties.PopupView = gridLookUpEdit3View;
-            gridLookUpStatus.Size = new Size(452, 22);
+            gridLookUpStatus.Size = new Size(396, 20);
             gridLookUpStatus.StyleController = layoutControl5;
             gridLookUpStatus.TabIndex = 3;
             // 
             // gridLookUpEdit3View
             // 
-            gridLookUpEdit3View.DetailHeight = 431;
             gridLookUpEdit3View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             gridLookUpEdit3View.Name = "gridLookUpEdit3View";
-            gridLookUpEdit3View.OptionsEditForm.PopupEditFormWidth = 933;
             gridLookUpEdit3View.OptionsSelection.EnableAppearanceFocusedCell = false;
             gridLookUpEdit3View.OptionsView.ShowGroupPanel = false;
             // 
             // gridLookUpPriority
             // 
-            gridLookUpPriority.Location = new Point(89, 14);
-            gridLookUpPriority.Margin = new Padding(4, 4, 4, 4);
+            gridLookUpPriority.Location = new Point(69, 10);
             gridLookUpPriority.Name = "gridLookUpPriority";
             gridLookUpPriority.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             gridLookUpPriority.Properties.PopupView = gridLookUpEdit2View;
-            gridLookUpPriority.Size = new Size(452, 22);
+            gridLookUpPriority.Size = new Size(396, 20);
             gridLookUpPriority.StyleController = layoutControl5;
             gridLookUpPriority.TabIndex = 2;
             // 
             // gridLookUpEdit2View
             // 
-            gridLookUpEdit2View.DetailHeight = 431;
             gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             gridLookUpEdit2View.Name = "gridLookUpEdit2View";
-            gridLookUpEdit2View.OptionsEditForm.PopupEditFormWidth = 933;
             gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
             gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
@@ -229,7 +217,7 @@
             layoutControlGroup4.GroupBordersVisible = false;
             layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem6, emptySpaceItem3, layoutControlItem2, layoutControlItem3 });
             layoutControlGroup4.Name = "Root";
-            layoutControlGroup4.Size = new Size(555, 126);
+            layoutControlGroup4.Size = new Size(476, 102);
             layoutControlGroup4.TextVisible = false;
             // 
             // layoutControlItem6
@@ -239,69 +227,66 @@
             layoutControlItem6.Control = gridLookUpPriority;
             layoutControlItem6.Location = new Point(0, 0);
             layoutControlItem6.Name = "layoutControlItem6";
-            layoutControlItem6.Size = new Size(531, 26);
+            layoutControlItem6.Size = new Size(458, 24);
             layoutControlItem6.Text = "Prioridad";
-            layoutControlItem6.TextSize = new Size(61, 20);
+            layoutControlItem6.TextSize = new Size(48, 15);
             // 
             // emptySpaceItem3
             // 
-            emptySpaceItem3.Location = new Point(0, 78);
+            emptySpaceItem3.Location = new Point(0, 72);
             emptySpaceItem3.Name = "emptySpaceItem3";
-            emptySpaceItem3.Size = new Size(531, 24);
+            emptySpaceItem3.Size = new Size(458, 14);
             // 
             // layoutControlItem2
             // 
             layoutControlItem2.AppearanceItemCaption.Font = new Font("Segoe UI", 9F);
             layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             layoutControlItem2.Control = gridLookUpStatus;
-            layoutControlItem2.Location = new Point(0, 26);
+            layoutControlItem2.Location = new Point(0, 24);
             layoutControlItem2.Name = "layoutControlItem2";
-            layoutControlItem2.Size = new Size(531, 26);
+            layoutControlItem2.Size = new Size(458, 24);
             layoutControlItem2.Text = "Estado";
-            layoutControlItem2.TextSize = new Size(61, 20);
+            layoutControlItem2.TextSize = new Size(48, 15);
             // 
             // layoutControlItem3
             // 
             layoutControlItem3.AppearanceItemCaption.Font = new Font("Segoe UI", 9F);
             layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
             layoutControlItem3.Control = gridLookUpUsers;
-            layoutControlItem3.Location = new Point(0, 52);
+            layoutControlItem3.Location = new Point(0, 48);
             layoutControlItem3.Name = "layoutControlItem3";
-            layoutControlItem3.Size = new Size(531, 26);
+            layoutControlItem3.Size = new Size(458, 24);
             layoutControlItem3.Text = "Usuarios";
-            layoutControlItem3.TextSize = new Size(61, 20);
+            layoutControlItem3.TextSize = new Size(48, 15);
             // 
             // layoutControl4
             // 
             layoutControl4.Controls.Add(dateDueDate);
             layoutControl4.Controls.Add(memoNotes);
-            layoutControl4.Location = new Point(2, 207);
-            layoutControl4.Margin = new Padding(4, 4, 4, 4);
+            layoutControl4.Location = new Point(2, 168);
             layoutControl4.Name = "layoutControl4";
             layoutControl4.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new Rectangle(339, 352, 650, 400);
             layoutControl4.Root = layoutControlGroup3;
-            layoutControl4.Size = new Size(556, 128);
+            layoutControl4.Size = new Size(477, 104);
             layoutControl4.TabIndex = 4;
             layoutControl4.Text = "layoutControl4";
             // 
             // dateDueDate
             // 
             dateDueDate.EditValue = null;
-            dateDueDate.Location = new Point(180, 14);
-            dateDueDate.Margin = new Padding(4, 4, 4, 4);
+            dateDueDate.Location = new Point(144, 10);
             dateDueDate.Name = "dateDueDate";
             dateDueDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             dateDueDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateDueDate.Size = new Size(362, 22);
+            dateDueDate.Size = new Size(322, 20);
             dateDueDate.StyleController = layoutControl4;
             dateDueDate.TabIndex = 5;
             // 
             // memoNotes
             // 
-            memoNotes.Location = new Point(180, 40);
-            memoNotes.Margin = new Padding(4, 4, 4, 4);
+            memoNotes.Location = new Point(144, 34);
             memoNotes.Name = "memoNotes";
-            memoNotes.Size = new Size(362, 74);
+            memoNotes.Size = new Size(322, 60);
             memoNotes.StyleController = layoutControl4;
             memoNotes.TabIndex = 6;
             // 
@@ -311,7 +296,7 @@
             layoutControlGroup3.GroupBordersVisible = false;
             layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem4, layoutControlItem5 });
             layoutControlGroup3.Name = "Root";
-            layoutControlGroup3.Size = new Size(556, 128);
+            layoutControlGroup3.Size = new Size(477, 104);
             layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem4
@@ -321,20 +306,20 @@
             layoutControlItem4.Control = dateDueDate;
             layoutControlItem4.Location = new Point(0, 0);
             layoutControlItem4.Name = "layoutControlItem4";
-            layoutControlItem4.Size = new Size(532, 26);
+            layoutControlItem4.Size = new Size(459, 24);
             layoutControlItem4.Text = "Fecha de Compromiso:";
-            layoutControlItem4.TextSize = new Size(152, 20);
+            layoutControlItem4.TextSize = new Size(123, 15);
             // 
             // layoutControlItem5
             // 
             layoutControlItem5.AppearanceItemCaption.Font = new Font("Segoe UI", 9F);
             layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
             layoutControlItem5.Control = memoNotes;
-            layoutControlItem5.Location = new Point(0, 26);
+            layoutControlItem5.Location = new Point(0, 24);
             layoutControlItem5.Name = "layoutControlItem5";
-            layoutControlItem5.Size = new Size(532, 78);
+            layoutControlItem5.Size = new Size(459, 64);
             layoutControlItem5.Text = "Notas:";
-            layoutControlItem5.TextSize = new Size(152, 20);
+            layoutControlItem5.TextSize = new Size(123, 15);
             // 
             // btnSave
             // 
@@ -345,10 +330,9 @@
             btnSave.Appearance.Options.UseFont = true;
             btnSave.Appearance.Options.UseForeColor = true;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.Location = new Point(72, 369);
-            btnSave.Margin = new Padding(4, 4, 4, 4);
+            btnSave.Location = new Point(62, 300);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(162, 39);
+            btnSave.Size = new Size(139, 32);
             btnSave.TabIndex = 7;
             btnSave.Text = "Guardar";
             btnSave.Click += btnSave_Click;
@@ -362,10 +346,9 @@
             btnCancel.Appearance.Options.UseFont = true;
             btnCancel.Appearance.Options.UseForeColor = true;
             btnCancel.Cursor = Cursors.Hand;
-            btnCancel.Location = new Point(266, 369);
-            btnCancel.Margin = new Padding(4, 4, 4, 4);
+            btnCancel.Location = new Point(228, 300);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(160, 39);
+            btnCancel.Size = new Size(137, 32);
             btnCancel.TabIndex = 8;
             btnCancel.Text = "Cancelar";
             btnCancel.Click += btnCancel_Click;
@@ -376,12 +359,11 @@
             lblcreat.Appearance.ForeColor = Color.SeaGreen;
             lblcreat.Appearance.Options.UseFont = true;
             lblcreat.Appearance.Options.UseForeColor = true;
-            lblcreat.Location = new Point(12, 10);
-            lblcreat.Margin = new Padding(4, 4, 4, 4);
+            lblcreat.Location = new Point(10, 8);
             lblcreat.Name = "lblcreat";
-            lblcreat.Size = new Size(316, 60);
+            lblcreat.Size = new Size(235, 47);
             lblcreat.TabIndex = 26;
-            lblcreat.Text = "CREAR TAREAS";
+            lblcreat.Text = "CREAR TAREA";
             // 
             // groupBoxFormTask
             // 
@@ -391,25 +373,22 @@
             groupBoxFormTask.Controls.Add(btnSave);
             groupBoxFormTask.Controls.Add(layoutControl4);
             groupBoxFormTask.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBoxFormTask.Location = new Point(12, 75);
-            groupBoxFormTask.Margin = new Padding(4, 4, 4, 4);
+            groupBoxFormTask.Location = new Point(10, 61);
             groupBoxFormTask.Name = "groupBoxFormTask";
-            groupBoxFormTask.Padding = new Padding(4, 4, 4, 4);
-            groupBoxFormTask.Size = new Size(567, 537);
+            groupBoxFormTask.Size = new Size(486, 436);
             groupBoxFormTask.TabIndex = 27;
             groupBoxFormTask.TabStop = false;
             groupBoxFormTask.Text = "Formulario";
             // 
             // TaskForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 16F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(590, 622);
+            ClientSize = new Size(506, 505);
             Controls.Add(groupBoxFormTask);
             Controls.Add(lblcreat);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             IconOptions.Image = (Image)resources.GetObject("TaskForm.IconOptions.Image");
-            Margin = new Padding(4, 4, 4, 4);
             MaximizeBox = false;
             Name = "TaskForm";
             ((System.ComponentModel.ISupportInitialize)layoutControl1).EndInit();

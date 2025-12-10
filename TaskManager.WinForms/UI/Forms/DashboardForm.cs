@@ -94,7 +94,6 @@ namespace TaskManager.WinForms.UI.Forms
 
             return p;
         }
-
         private void LoadData()
         {
             var tasks = _taskService.GetTasks(null).ToList();
@@ -111,9 +110,9 @@ namespace TaskManager.WinForms.UI.Forms
 
             Series series = new Series("Tareas por prioridad", ViewType.Bar);
 
-            series.Points.Add(new SeriesPoint("High", tasks.Count(x => x.Priority == TaskPriority.High)));
-            series.Points.Add(new SeriesPoint("Medium", tasks.Count(x => x.Priority == TaskPriority.Medium)));
-            series.Points.Add(new SeriesPoint("Low", tasks.Count(x => x.Priority == TaskPriority.Low)));
+            series.Points.Add(new SeriesPoint("Alta", tasks.Count(x => x.Priority == TaskPriority.High)));
+            series.Points.Add(new SeriesPoint("Media", tasks.Count(x => x.Priority == TaskPriority.Medium)));
+            series.Points.Add(new SeriesPoint("Baja", tasks.Count(x => x.Priority == TaskPriority.Low)));
 
             chart.Series.Add(series);
 
