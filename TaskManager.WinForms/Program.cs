@@ -13,9 +13,6 @@ namespace TaskManager.WinForms
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -44,11 +41,9 @@ namespace TaskManager.WinForms
                 // Session within the allowed time of minutes for testing
                 if (diff.TotalMinutes <= SessionManager.SessionDuration)
                 {
-                   
                     var user = services.Users.GetById(session.UserId);
                     if (user != null)
                     {
-                       
                         System.Windows.Forms.Application.Run(new MainForm(services.Tasks, user));
                         return;
                     }
@@ -58,7 +53,6 @@ namespace TaskManager.WinForms
                     SessionManager.ClearSession();
                 }
             }
-
             System.Windows.Forms.Application.Run(new LoginForm(services.Auth, services.Tasks)); ;
         }
     }
