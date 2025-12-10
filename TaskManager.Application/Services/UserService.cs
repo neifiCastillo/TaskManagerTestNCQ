@@ -12,13 +12,11 @@ namespace TaskManager.Application.Services
     public class UserService
     {
         private readonly IUserRepository _repo;
-
         public UserService(IUserRepository repo)
         {
             _repo = repo;
         }
-
-        public UserDto GetById(int id)
+        public UserDto? GetById(int id)
         {
             var u = _repo.GetById(id);
             if (u == null) return null;

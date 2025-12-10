@@ -9,7 +9,7 @@ namespace TaskManager.WinForms.UI.Controls
 {
     public static class AlertService
     {
-        private static AlertControl _alert;
+        private static AlertControl? _alert;
 
         public static void Initialize(AlertControl alertControl)
         {
@@ -17,10 +17,10 @@ namespace TaskManager.WinForms.UI.Controls
             _alert.BeforeFormShow -= OnBeforeFormShow;
             _alert.BeforeFormShow += OnBeforeFormShow;
         }
-
         private static void OnBeforeFormShow(object sender, AlertFormEventArgs e)
         {
-            Rectangle screen = Screen.PrimaryScreen.WorkingArea;
+            Rectangle screen = Screen.PrimaryScreen?.WorkingArea
+                   ?? Screen.AllScreens.First().WorkingArea;
 
             int w = e.AlertForm.Width;
             int h = e.AlertForm.Height;
@@ -30,7 +30,6 @@ namespace TaskManager.WinForms.UI.Controls
 
             e.Location = new Point(x, y);
         }
-
         public static void Success(string message)
         {
             if (_alert == null) return;
@@ -38,7 +37,6 @@ namespace TaskManager.WinForms.UI.Controls
             AlertInfo info = new AlertInfo("Éxito", message);
             _alert.Show(null, info);
         }
-
         public static void Error(string message)
         {
             if (_alert == null) return;

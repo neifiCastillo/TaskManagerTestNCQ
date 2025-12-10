@@ -15,14 +15,11 @@ namespace TaskManager.Application.Factories
         {
             var dbFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "taskmanager.db");
             var connectionString = $"Data Source={dbFile};";
-
             
             var dbFactory = new SqliteConnectionFactory(connectionString);
-
            
             var userRepo = new DapperUserRepository(dbFactory);
             var taskRepo = new DapperTaskRepository(dbFactory);
-
             
             var authService = new AuthService(userRepo);
             var taskService = new TaskService(taskRepo, userRepo);

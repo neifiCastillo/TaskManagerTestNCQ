@@ -15,12 +15,10 @@ namespace TaskManager.Application.Services
     public class AuthService
     {
         private readonly IUserRepository _userRepo;
-
         public AuthService(IUserRepository userRepo)
         {
             _userRepo = userRepo;
         }
-
         public UserDto Login(string username, string password)
         {
             var user = _userRepo.GetByUsername(username);
@@ -38,7 +36,6 @@ namespace TaskManager.Application.Services
                 FullName = user.FullName
             };
         }
-
         public void Register(RegisterUserDto dto)
         {
             if (string.IsNullOrWhiteSpace(dto.Username) ||

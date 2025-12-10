@@ -45,8 +45,12 @@ namespace TaskManager.WinForms
                 {
                    
                     var user = services.Users.GetById(session.UserId);
-                    System.Windows.Forms.Application.Run(new MainForm(services.Tasks, user));
-                    return;
+                    if (user is null)
+                    {
+                        SessionManager.ClearSession();
+                        System.Windows.Forms.Application.Run(new LoginForm(services.Auth, services.Tasks));
+                        return;
+                    }
                 }
                 else
                 {

@@ -96,6 +96,7 @@
             txtUsername.Properties.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsername.Properties.Appearance.Options.UseBackColor = true;
             txtUsername.Properties.Appearance.Options.UseFont = true;
+            txtUsername.Properties.MaxLength = 10;
             txtUsername.Size = new Size(326, 34);
             txtUsername.TabIndex = 1;
             // 
@@ -108,6 +109,7 @@
             txtPassword.Properties.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Properties.Appearance.Options.UseBackColor = true;
             txtPassword.Properties.Appearance.Options.UseFont = true;
+            txtPassword.Properties.MaxLength = 10;
             txtPassword.Properties.UseSystemPasswordChar = true;
             txtPassword.Size = new Size(326, 34);
             txtPassword.TabIndex = 2;
@@ -200,6 +202,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "LoginForm";
+            FormClosed += LoginForm_FormClosed;
             ((System.ComponentModel.ISupportInitialize)txtUsername.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtPassword.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();

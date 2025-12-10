@@ -17,7 +17,6 @@ namespace TaskManager.Application.Helpers
             var combined = Encoding.UTF8.GetBytes(password + salt);
             hash = Convert.ToBase64String(sha256.ComputeHash(combined));
         }
-
         public static bool VerifyPassword(string password, string storedHash, string storedSalt)
         {
             using var sha256 = SHA256.Create();

@@ -9,9 +9,9 @@ namespace TaskManager.WinForms.UI.Forms
     public partial class DashboardForm: XtraForm
     {
         private readonly TaskService _taskService;
-        private Panel cardPending, cardInProgress, cardDone;
-        private Label lblPending, lblInProgress, lblDone;
-        private ChartControl chart;
+        private Panel? cardPending, cardInProgress, cardDone;
+        private Label? lblPending, lblInProgress, lblDone;
+        private ChartControl? chart;
         public DashboardForm(TaskService taskService)
         {
             InitializeComponent();
@@ -19,7 +19,6 @@ namespace TaskManager.WinForms.UI.Forms
             BuildUI();
             LoadData();
         }
-
         private void BuildUI()
         {
             this.Text = "Dashboard";
@@ -100,16 +99,15 @@ namespace TaskManager.WinForms.UI.Forms
         {
             var tasks = _taskService.GetTasks(null).ToList();
 
-            lblPending.Text = tasks.Count(x => x.Status == TaskStatus.Pending).ToString();
-            lblInProgress.Text = tasks.Count(x => x.Status == TaskStatus.InProgress).ToString();
-            lblDone.Text = tasks.Count(x => x.Status == TaskStatus.Done).ToString();
+            lblPending!.Text = tasks.Count(x => x.Status == TaskStatus.Pending).ToString();
+            lblInProgress!.Text = tasks.Count(x => x.Status == TaskStatus.InProgress).ToString();
+            lblDone!.Text = tasks.Count(x => x.Status == TaskStatus.Done).ToString();
 
             BuildChart(tasks);
         }
-
         private void BuildChart(System.Collections.Generic.List<TaskManager.Domain.Entities.TaskItem> tasks)
         {
-            chart.Series.Clear();
+            chart!.Series.Clear();
 
             Series series = new Series("Tareas por prioridad", ViewType.Bar);
 

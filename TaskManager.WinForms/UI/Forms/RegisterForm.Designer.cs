@@ -52,74 +52,71 @@
             // 
             lblpasswordComfir.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblpasswordComfir.Appearance.Options.UseFont = true;
-            lblpasswordComfir.Location = new Point(148, 382);
-            lblpasswordComfir.Margin = new Padding(4);
+            lblpasswordComfir.Location = new Point(127, 310);
             lblpasswordComfir.Name = "lblpasswordComfir";
-            lblpasswordComfir.Size = new Size(207, 25);
+            lblpasswordComfir.Size = new Size(163, 20);
             lblpasswordComfir.TabIndex = 23;
             lblpasswordComfir.Text = "Comfirmar Contraseña:";
             // 
             // txtConfirmPassword
             // 
-            txtConfirmPassword.Location = new Point(148, 414);
-            txtConfirmPassword.Margin = new Padding(4);
+            txtConfirmPassword.Location = new Point(127, 336);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.Properties.Appearance.Font = new Font("Segoe UI", 12F);
             txtConfirmPassword.Properties.Appearance.Options.UseFont = true;
+            txtConfirmPassword.Properties.MaxLength = 10;
             txtConfirmPassword.Properties.UseSystemPasswordChar = true;
-            txtConfirmPassword.Size = new Size(302, 34);
+            txtConfirmPassword.Size = new Size(259, 28);
             txtConfirmPassword.TabIndex = 4;
             // 
             // txtFullName
             // 
-            txtFullName.Location = new Point(148, 244);
-            txtFullName.Margin = new Padding(4);
+            txtFullName.Location = new Point(127, 198);
             txtFullName.Name = "txtFullName";
             txtFullName.Properties.Appearance.Font = new Font("Segoe UI", 12F);
             txtFullName.Properties.Appearance.Options.UseFont = true;
-            txtFullName.Size = new Size(302, 34);
+            txtFullName.Properties.MaxLength = 50;
+            txtFullName.Size = new Size(259, 28);
             txtFullName.TabIndex = 2;
             // 
             // lbluserComplet
             // 
             lbluserComplet.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lbluserComplet.Appearance.Options.UseFont = true;
-            lbluserComplet.Location = new Point(148, 212);
-            lbluserComplet.Margin = new Padding(4);
+            lbluserComplet.Location = new Point(127, 172);
             lbluserComplet.Name = "lbluserComplet";
-            lbluserComplet.Size = new Size(168, 25);
+            lbluserComplet.Size = new Size(132, 20);
             lbluserComplet.TabIndex = 20;
             lbluserComplet.Text = "Nombre completo:";
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(148, 327);
-            txtPassword.Margin = new Padding(4);
+            txtPassword.Location = new Point(127, 266);
             txtPassword.Name = "txtPassword";
             txtPassword.Properties.Appearance.Font = new Font("Segoe UI", 12F);
             txtPassword.Properties.Appearance.Options.UseFont = true;
+            txtPassword.Properties.MaxLength = 10;
             txtPassword.Properties.UseSystemPasswordChar = true;
-            txtPassword.Size = new Size(302, 34);
+            txtPassword.Size = new Size(259, 28);
             txtPassword.TabIndex = 3;
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(148, 160);
-            txtUsername.Margin = new Padding(4);
+            txtUsername.Location = new Point(127, 130);
             txtUsername.Name = "txtUsername";
             txtUsername.Properties.Appearance.Font = new Font("Segoe UI", 12F);
             txtUsername.Properties.Appearance.Options.UseFont = true;
-            txtUsername.Size = new Size(302, 34);
+            txtUsername.Properties.MaxLength = 10;
+            txtUsername.Size = new Size(259, 28);
             txtUsername.TabIndex = 1;
             // 
             // lblpassword
             // 
             lblpassword.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblpassword.Appearance.Options.UseFont = true;
-            lblpassword.Location = new Point(148, 295);
-            lblpassword.Margin = new Padding(4);
+            lblpassword.Location = new Point(127, 240);
             lblpassword.Name = "lblpassword";
-            lblpassword.Size = new Size(106, 25);
+            lblpassword.Size = new Size(83, 20);
             lblpassword.TabIndex = 17;
             lblpassword.Text = "Contraseña:";
             // 
@@ -132,10 +129,9 @@
             btnSave.Appearance.Options.UseFont = true;
             btnSave.Appearance.Options.UseForeColor = true;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.Location = new Point(148, 486);
-            btnSave.Margin = new Padding(4);
+            btnSave.Location = new Point(127, 395);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(302, 55);
+            btnSave.Size = new Size(259, 45);
             btnSave.TabIndex = 5;
             btnSave.Text = "Registrarme  ";
             btnSave.Click += btnSave_Click;
@@ -144,10 +140,9 @@
             // 
             lbluser.Appearance.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lbluser.Appearance.Options.UseFont = true;
-            lbluser.Location = new Point(148, 128);
-            lbluser.Margin = new Padding(4);
+            lbluser.Location = new Point(127, 104);
             lbluser.Name = "lbluser";
-            lbluser.Size = new Size(178, 25);
+            lbluser.Size = new Size(139, 20);
             lbluser.TabIndex = 15;
             lbluser.Text = "Nombre de usuario:";
             // 
@@ -157,10 +152,9 @@
             lblcrearAcount.Appearance.ForeColor = Color.SeaGreen;
             lblcrearAcount.Appearance.Options.UseFont = true;
             lblcrearAcount.Appearance.Options.UseForeColor = true;
-            lblcrearAcount.Location = new Point(145, 0);
-            lblcrearAcount.Margin = new Padding(4);
+            lblcrearAcount.Location = new Point(124, 0);
             lblcrearAcount.Name = "lblcrearAcount";
-            lblcrearAcount.Size = new Size(325, 60);
+            lblcrearAcount.Size = new Size(262, 47);
             lblcrearAcount.TabIndex = 24;
             lblcrearAcount.Text = "CREAR CUENTA";
             // 
@@ -168,10 +162,9 @@
             // 
             lblsubCreat.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblsubCreat.Appearance.Options.UseFont = true;
-            lblsubCreat.Location = new Point(190, 59);
-            lblsubCreat.Margin = new Padding(4);
+            lblsubCreat.Location = new Point(163, 48);
             lblsubCreat.Name = "lblsubCreat";
-            lblsubCreat.Size = new Size(226, 28);
+            lblsubCreat.Size = new Size(181, 21);
             lblsubCreat.TabIndex = 25;
             lblsubCreat.Text = "Regístrate para continuar ";
             // 
@@ -181,10 +174,9 @@
             lblquestion.Appearance.ForeColor = Color.Gray;
             lblquestion.Appearance.Options.UseFont = true;
             lblquestion.Appearance.Options.UseForeColor = true;
-            lblquestion.Location = new Point(178, 580);
-            lblquestion.Margin = new Padding(4);
+            lblquestion.Location = new Point(153, 471);
             lblquestion.Name = "lblquestion";
-            lblquestion.Size = new Size(130, 21);
+            lblquestion.Size = new Size(110, 17);
             lblquestion.TabIndex = 26;
             lblquestion.Text = "¿Ya tienes cuenta? ";
             // 
@@ -194,19 +186,18 @@
             lblInit.Appearance.ForeColor = SystemColors.MenuHighlight;
             lblInit.Appearance.Options.UseFont = true;
             lblInit.Appearance.Options.UseForeColor = true;
-            lblInit.Location = new Point(312, 580);
-            lblInit.Margin = new Padding(4);
+            lblInit.Location = new Point(267, 471);
             lblInit.Name = "lblInit";
-            lblInit.Size = new Size(84, 21);
+            lblInit.Size = new Size(70, 17);
             lblInit.TabIndex = 27;
             lblInit.Text = "Inicia sesión";
             lblInit.Click += lblInit_Click;
             // 
             // RegisterForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 16F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(594, 665);
+            ClientSize = new Size(509, 540);
             Controls.Add(lblInit);
             Controls.Add(lblquestion);
             Controls.Add(lblsubCreat);
@@ -222,7 +213,6 @@
             Controls.Add(lbluser);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             IconOptions.Image = (Image)resources.GetObject("RegisterForm.IconOptions.Image");
-            Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "RegisterForm";

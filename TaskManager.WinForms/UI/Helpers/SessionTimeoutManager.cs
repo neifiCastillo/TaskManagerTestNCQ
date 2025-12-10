@@ -13,7 +13,6 @@ namespace TaskManager.WinForms.UI.Helpers
     {
         private readonly Form _currentForm;
         private readonly InactivityMonitor _monitor;
-
         public SessionTimeoutManager(Form form)
         {
             _currentForm = form;
@@ -24,11 +23,8 @@ namespace TaskManager.WinForms.UI.Helpers
                 OnSessionTimeout
             );
         }
-
         public void Start() => _monitor.Start();
-
         public void Stop() => _monitor.Stop();
-
         private void OnSessionTimeout()
         {
             XtraMessageBox.Show(
@@ -37,7 +33,6 @@ namespace TaskManager.WinForms.UI.Helpers
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning
             );
-
             SessionManager.ClearSession();
 
             var services = ServiceFactory.Create();

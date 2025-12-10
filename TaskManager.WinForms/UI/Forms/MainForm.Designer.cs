@@ -357,14 +357,14 @@
             // dashbiardToolStripMenuItem1
             // 
             dashbiardToolStripMenuItem1.Name = "dashbiardToolStripMenuItem1";
-            dashbiardToolStripMenuItem1.Size = new Size(224, 28);
+            dashbiardToolStripMenuItem1.Size = new Size(177, 28);
             dashbiardToolStripMenuItem1.Text = "Dashboard";
             dashbiardToolStripMenuItem1.Click += dashbiardToolStripMenuItem1_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(224, 28);
+            exitToolStripMenuItem.Size = new Size(177, 28);
             exitToolStripMenuItem.Text = "Salir";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -398,7 +398,7 @@
             btnNew.Cursor = Cursors.Hand;
             btnNew.ImageOptions.Image = (Image)resources.GetObject("btnNew.ImageOptions.Image");
             btnNew.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            btnNew.Location = new Point(614, 55);
+            btnNew.Location = new Point(669, 54);
             btnNew.Margin = new Padding(4);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(223, 43);
@@ -430,6 +430,7 @@
             Margin = new Padding(4);
             MaximizeBox = false;
             Name = "MainForm";
+            FormClosing += MainForm_FormClosing;
             ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControl1).EndInit();

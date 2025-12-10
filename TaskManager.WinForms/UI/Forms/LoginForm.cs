@@ -20,9 +20,34 @@ namespace TaskManager.WinForms.UI
 
             AlertService.Initialize(alertControl1);
             FormFadeIn.FadeIn(this);
+
+            this.AcceptButton = btnLogin;
+            txtUsername.KeyDown += LoginKeyDown;
+            txtPassword.KeyDown += LoginKeyDown;
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Login();
+        }
+        private void lblRegister_Click(object sender, EventArgs e)
+        {
+            var registerForm = new RegisterForm(_authService);
+            registerForm.ShowDialog();
+        }
+        private void Login()
+        {
+            if (string.IsNullOrWhiteSpace(txtUsername.Text) ||
+                string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                XtraMessageBox.Show(
+                    "Debe ingresar su usuario y contraseña.",
+                    "Campos incompletos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+
             try
             {
                 var user = _authService.Login(txtUsername.Text, txtPassword.Text);
@@ -36,12 +61,16 @@ namespace TaskManager.WinForms.UI
                 ErrorHandler.Handle(ex);
             }
         }
-
-        private void lblRegister_Click(object sender, EventArgs e)
+        private void LoginKeyDown(object? sender, KeyEventArgs e)
         {
-            var registerForm = new RegisterForm(_authService);
-            registerForm.ShowDialog();
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login();
+            }
         }
-
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

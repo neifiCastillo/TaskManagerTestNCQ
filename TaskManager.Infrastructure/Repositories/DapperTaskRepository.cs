@@ -19,14 +19,12 @@ namespace TaskManager.Infrastructure.Repositories
         {
             _factory = factory;
         }
-
         public TaskItem? GetById(int id)
         {
             using var connection = _factory.CreateConnection();
             string sql = "SELECT * FROM Tasks WHERE Id = @Id LIMIT 1;";
             return connection.QueryFirstOrDefault<TaskItem>(sql, new { Id = id });
         }
-
         public IEnumerable<TaskItem> GetAll(TaskFilter filter)
         {
             using var connection = _factory.CreateConnection();
@@ -74,7 +72,6 @@ namespace TaskManager.Infrastructure.Repositories
 
             return connection.Query<TaskItem>(sql, parameters);
         }
-
         public void Add(TaskItem task)
         {
             using var connection = _factory.CreateConnection();
@@ -87,7 +84,6 @@ namespace TaskManager.Infrastructure.Repositories
 
             connection.Execute(sql, task);
         }
-
         public void Update(TaskItem task)
         {
             using var connection = _factory.CreateConnection();
@@ -105,7 +101,6 @@ namespace TaskManager.Infrastructure.Repositories
 
             connection.Execute(sql, task);
         }
-
         public void Delete(int id)
         {
             using var connection = _factory.CreateConnection();

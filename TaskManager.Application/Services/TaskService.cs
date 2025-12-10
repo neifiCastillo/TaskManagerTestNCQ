@@ -16,13 +16,12 @@ namespace TaskManager.Application.Services
     {
         private readonly ITaskRepository _taskRepo;
         private readonly IUserRepository _userRepo;
-
         public TaskService(ITaskRepository taskRepo, IUserRepository userRepo)
         {
             _taskRepo = taskRepo;
             _userRepo = userRepo;
         }
-        public IEnumerable<TaskItem> GetTasks(TaskFilter filter)
+        public IEnumerable<TaskItem> GetTasks(TaskFilter? filter)
         {
             if (filter == null)
                 filter = new TaskFilter();
@@ -51,7 +50,6 @@ namespace TaskManager.Application.Services
 
             _taskRepo.Add(task);
         }
-
         public void UpdateTask(TaskDto dto)
         {
             var original = _taskRepo.GetById(dto.Id);
@@ -71,7 +69,6 @@ namespace TaskManager.Application.Services
 
             _taskRepo.Update(original);
         }
-
         public void ChangeStatus(int taskId, TaskStatus newStatus)
         {
             var task = _taskRepo.GetById(taskId);
@@ -103,7 +100,6 @@ namespace TaskManager.Application.Services
                 FullName = u.FullName
             });
         }
-
         public void DeleteTask(int id)
         {
             var task = _taskRepo.GetById(id);

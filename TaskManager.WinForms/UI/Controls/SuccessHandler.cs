@@ -9,11 +9,9 @@ namespace TaskManager.WinForms.UI.Controls
 {
     public static class SuccessHandler
     {
-   
-            public static void Show(string message)
-            {
-                AlertService.Success(message);
-            }
-        
+        public static void Show(string message)
+        {
+            AlertService.Success(message);
+        }
     }
 }

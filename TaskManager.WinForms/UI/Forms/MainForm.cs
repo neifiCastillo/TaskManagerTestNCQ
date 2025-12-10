@@ -17,6 +17,7 @@ using TaskManager.WinForms.UI.Forms;
 using TaskManager.Application.Helpers;
 using TaskManager.Infrastructure.Repositories;
 using TaskManager.Application.Factories;
+using DevExpress.CodeParser;
 
 namespace TaskManager.WinForms.UI
 {
@@ -24,7 +25,6 @@ namespace TaskManager.WinForms.UI
     {
         private readonly TaskService _taskService;
         private readonly UserDto _currentUser;
-        private InactivityMonitor _inactivityMonitor;
         private SessionTimeoutManager _sessionTimeout;
         public MainForm(TaskService taskService, UserDto currentUser)
         {
@@ -57,8 +57,8 @@ namespace TaskManager.WinForms.UI
 
             AddActionButtons();
             TranslateColumns();
+            ConfigureNotesColumn();
         }
-
         private void TranslateColumns()
         {
             if (gridView1.Columns["Description"] == null) return;
@@ -255,7 +255,7 @@ namespace TaskManager.WinForms.UI
             gridLookUpEditUsers.Properties.DisplayMember = "FullName";
             gridLookUpEditUsers.Properties.ValueMember = "Id";
 
-            var view = gridLookUpEditUsers.Properties.PopupView as DevExpress.XtraGrid.Views.Grid.GridView;
+            var view = (GridView)gridLookUpEditUsers.Properties.PopupView;
 
             view.Columns.Clear();
             view.OptionsView.ShowColumnHeaders = true;
@@ -266,18 +266,17 @@ namespace TaskManager.WinForms.UI
 
             gridLookUpEditUsers.EditValue = 0;
         }
-
         private TaskFilter BuildFilter()
         {
             var f = new TaskFilter();
 
             // Status
-            if (comboStatus.SelectedIndex > 0)
-                f.Status = Enum.Parse<TaskStatus>(comboStatus.SelectedItem.ToString());
+            if (comboStatus.SelectedIndex > 0 && comboStatus.SelectedItem is string statusValue)
+                f.Status = Enum.Parse<TaskStatus>(statusValue);
 
             // Priority
-            if (comboPriority.SelectedIndex > 0)
-                f.Priority = Enum.Parse<TaskPriority>(comboPriority.SelectedItem.ToString());
+            if (comboPriority.SelectedIndex > 0 && comboPriority.SelectedItem is string priorityValue)
+                f.Priority = Enum.Parse<TaskPriority>(priorityValue);
 
             // User
             int userId = Convert.ToInt32(gridLookUpEditUsers.EditValue);
@@ -296,14 +295,12 @@ namespace TaskManager.WinForms.UI
 
             return f;
         }
-
         private void btnNew_Click(object sender, EventArgs e)
         {
             var form = new TaskForm(_taskService, _currentUser);
             form.ShowDialog();
             LoadTasks();
         }
-
         private void btnEdit_Click(object rowObj, EventArgs e)
         {
             var row = rowObj as TaskItem;
@@ -372,9 +369,58 @@ namespace TaskManager.WinForms.UI
         }
         private void btnFilter_Click(object sender, EventArgs e)
         {
+
+            if (!ValidateDateFilters())
+                return;
+
             LoadTasks();
         }
+        private bool ValidateDateFilters()
+        {
+            bool hasFrom = dateFrom.EditValue is DateTime;
+            bool hasTo = dateTo.EditValue is DateTime;
 
+            if (hasFrom && !hasTo)
+            {
+                XtraMessageBox.Show(
+                    "Debe seleccionar la fecha final.",
+                    "Falta información",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return false;
+            }
+
+            if (!hasFrom && hasTo)
+            {
+                XtraMessageBox.Show(
+                    "Debe seleccionar la fecha inicial.",
+                    "Falta información",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return false;
+            }
+
+            if (hasFrom && hasTo)
+            {
+                DateTime from = (DateTime)dateFrom.EditValue;
+                DateTime to = (DateTime)dateTo.EditValue;
+
+                if (from > to)
+                {
+                    XtraMessageBox.Show(
+                        "La fecha inicial no puede ser mayor que la fecha final.",
+                        "Rango inválido",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return false;
+                }
+            }
+
+            return true;
+        }
         private void btnClearFilter_Click(object sender, EventArgs e)
         {
             gridLookUpEditUsers.EditValue = 0;
@@ -466,21 +512,24 @@ namespace TaskManager.WinForms.UI
                 panelLegend,
                 new[]
                 {
-            (ImageHelper.ByteArrayToImage(Properties.Resources.edit), "Editar tarea"),
-            (ImageHelper.ByteArrayToImage(Properties.Resources.clock), "Poner tarea en proceso"),
-            (ImageHelper.ByteArrayToImage(Properties.Resources.done), "Completar tarea"),
-            (ImageHelper.ByteArrayToImage(Properties.Resources.delete), "Eliminar tarea")
+            (ImageHelper.ByteArrayToImage(Properties.Resources.edit)!, "Editar tarea"),
+            (ImageHelper.ByteArrayToImage(Properties.Resources.clock)!, "Poner tarea en proceso"),
+            (ImageHelper.ByteArrayToImage(Properties.Resources.done)!, "Completar tarea"),
+            (ImageHelper.ByteArrayToImage(Properties.Resources.delete)!, "Eliminar tarea")
                 }
             );
         }
-
         private void dashbiardToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var dash = new DashboardForm(_taskService);
             dash.ShowDialog();
         }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExitToLogin(null);
+        }
+
+        private void ExitToLogin(FormClosingEventArgs? e)
         {
 
             if (XtraMessageBox.Show("¿Desea salir del sistema?",
@@ -488,13 +537,39 @@ namespace TaskManager.WinForms.UI
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
-
                 SessionManager.ClearSession();
                 var services = ServiceFactory.Create();
                 var login = new LoginForm(services.Auth, services.Tasks);
                 login.Show();
-                this.Close();
             }
+            else
+            {
+                if (e != null)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void ConfigureNotesColumn()
+        {
+            var colNotes = gridView1.Columns["Notes"];
+            if (colNotes == null) return;
+
+            // Multi-line editor
+            var memo = new RepositoryItemMemoEdit();
+            gridControl1.RepositoryItems.Add(memo);
+
+            colNotes.ColumnEdit = memo;
+
+            // Text and row adjustment
+            colNotes.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            gridView1.OptionsView.RowAutoHeight = true;
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ExitToLogin(e);
         }
     }
 

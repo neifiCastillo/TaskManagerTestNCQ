@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DevExpress.XtraEditors.Repository;
+
 
 namespace TaskManager.WinForms.UI.Helpers
 {
@@ -22,7 +24,7 @@ namespace TaskManager.WinForms.UI.Helpers
             lblTitle.Text = title;
             lblTitle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             lblTitle.Dock = DockStyle.Top;
-            lblTitle.Padding = new Padding(0, 0, 0, 10);
+            lblTitle.Padding = new Padding(5, 0, 0, 10);
             panel.Controls.Add(lblTitle);
 
             // Conteiner
@@ -31,7 +33,7 @@ namespace TaskManager.WinForms.UI.Helpers
             container.Dock = DockStyle.Fill;
             container.WrapContents = false;
             container.AutoScroll = true;
-            container.Padding = new Padding(0, 25, 0, 0);
+            container.Padding = new Padding(5, 25, 0, 0);
 
             panel.Controls.Add(container);
 
@@ -41,12 +43,11 @@ namespace TaskManager.WinForms.UI.Helpers
                 container.Controls.Add(CreateLegendItem(item.Icon, item.Text));
             }
         }
-
         public static Panel CreateLegendItem(Image icon, string text)
         {
             Panel p = new Panel
             {
-                Width = 220,
+                Width = 230,
                 Height = 40,
                 Margin = new Padding(5, 5, 0, 5)
             };

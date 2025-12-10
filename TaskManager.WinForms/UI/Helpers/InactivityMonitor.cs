@@ -14,7 +14,6 @@ namespace TaskManager.WinForms.UI.Helpers
         private DateTime _lastActivity;
         private readonly int _timeoutSeconds;
         private readonly Action _onTimeout;
-
         public InactivityMonitor(Form form, int timeoutSeconds, Action onTimeout)
         {
             _form = form;
@@ -29,7 +28,6 @@ namespace TaskManager.WinForms.UI.Helpers
 
             RegisterActivityEvents();
         }
-
         private void RegisterActivityEvents()
         {
             // Activity Events for the form
@@ -38,13 +36,11 @@ namespace TaskManager.WinForms.UI.Helpers
             _form.KeyDown += ResetActivity;
             _form.MouseWheel += ResetActivity;
         }
-
-        private void ResetActivity(object sender, EventArgs e)
+        private void ResetActivity(object? sender, EventArgs e)
         {
             _lastActivity = DateTime.Now;
         }
-
-        private void Timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object? sender, EventArgs e)
         {
             if ((DateTime.Now - _lastActivity).TotalSeconds >= _timeoutSeconds)
             {
@@ -52,7 +48,6 @@ namespace TaskManager.WinForms.UI.Helpers
                 _onTimeout?.Invoke();
             }
         }
-
         public void Start() => _timer.Start();
         public void Stop() => _timer.Stop();
     }
