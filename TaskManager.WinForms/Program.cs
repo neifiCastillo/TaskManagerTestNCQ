@@ -41,14 +41,14 @@ namespace TaskManager.WinForms
             {
                 var diff = DateTime.Now - session.LoginTime;
 
-                // Sesión dentro del tiempo permitido de minutos para prueba
+                // Session within the allowed time of minutes for testing
                 if (diff.TotalMinutes <= SessionManager.SessionDuration)
                 {
                    
                     var user = services.Users.GetById(session.UserId);
                     if (user != null)
                     {
-                        // ✔ Sesión válida → abrir MainForm
+                       
                         System.Windows.Forms.Application.Run(new MainForm(services.Tasks, user));
                         return;
                     }
