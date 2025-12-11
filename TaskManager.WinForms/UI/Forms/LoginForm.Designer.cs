@@ -51,10 +51,9 @@
             // 
             lbluser.Appearance.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbluser.Appearance.Options.UseFont = true;
-            lbluser.Location = new Point(20, 134);
-            lbluser.Margin = new Padding(4);
+            lbluser.Location = new Point(17, 109);
             lbluser.Name = "lbluser";
-            lbluser.Size = new Size(65, 25);
+            lbluser.Size = new Size(53, 20);
             lbluser.TabIndex = 0;
             lbluser.Text = "Usuario";
             // 
@@ -67,11 +66,10 @@
             btnLogin.Appearance.Options.UseFont = true;
             btnLogin.Appearance.Options.UseForeColor = true;
             btnLogin.Cursor = Cursors.Hand;
-            btnLogin.Location = new Point(20, 313);
+            btnLogin.Location = new Point(17, 254);
             btnLogin.LookAndFeel.UseDefaultLookAndFeel = false;
-            btnLogin.Margin = new Padding(4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(326, 62);
+            btnLogin.Size = new Size(279, 50);
             btnLogin.TabIndex = 3;
             btnLogin.Text = "Iniciar Sesión";
             btnLogin.Click += btnLogin_Click;
@@ -80,30 +78,27 @@
             // 
             lblpassword.Appearance.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblpassword.Appearance.Options.UseFont = true;
-            lblpassword.Location = new Point(20, 219);
-            lblpassword.Margin = new Padding(4);
+            lblpassword.Location = new Point(17, 178);
             lblpassword.Name = "lblpassword";
-            lblpassword.Size = new Size(97, 25);
+            lblpassword.Size = new Size(77, 20);
             lblpassword.TabIndex = 2;
             lblpassword.Text = "Contraseña";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(20, 166);
-            txtUsername.Margin = new Padding(4);
+            txtUsername.Location = new Point(17, 135);
             txtUsername.Name = "txtUsername";
             txtUsername.Properties.Appearance.BackColor = Color.White;
             txtUsername.Properties.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsername.Properties.Appearance.Options.UseBackColor = true;
             txtUsername.Properties.Appearance.Options.UseFont = true;
             txtUsername.Properties.MaxLength = 10;
-            txtUsername.Size = new Size(326, 34);
+            txtUsername.Size = new Size(279, 28);
             txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(20, 247);
-            txtPassword.Margin = new Padding(4);
+            txtPassword.Location = new Point(17, 201);
             txtPassword.Name = "txtPassword";
             txtPassword.Properties.Appearance.BackColor = Color.White;
             txtPassword.Properties.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -111,7 +106,7 @@
             txtPassword.Properties.Appearance.Options.UseFont = true;
             txtPassword.Properties.MaxLength = 10;
             txtPassword.Properties.UseSystemPasswordChar = true;
-            txtPassword.Size = new Size(326, 34);
+            txtPassword.Size = new Size(279, 28);
             txtPassword.TabIndex = 2;
             // 
             // alertControl1
@@ -133,9 +128,8 @@
             panelControl1.Controls.Add(lblpassword);
             panelControl1.Controls.Add(lbluser);
             panelControl1.Location = new Point(1, 1);
-            panelControl1.Margin = new Padding(4);
             panelControl1.Name = "panelControl1";
-            panelControl1.Size = new Size(379, 660);
+            panelControl1.Size = new Size(325, 536);
             panelControl1.TabIndex = 6;
             // 
             // lblRegister
@@ -145,10 +139,9 @@
             lblRegister.Appearance.Options.UseFont = true;
             lblRegister.Appearance.Options.UseForeColor = true;
             lblRegister.Cursor = Cursors.Hand;
-            lblRegister.Location = new Point(174, 412);
-            lblRegister.Margin = new Padding(4);
+            lblRegister.Location = new Point(149, 335);
             lblRegister.Name = "lblRegister";
-            lblRegister.Size = new Size(128, 21);
+            lblRegister.Size = new Size(109, 17);
             lblRegister.TabIndex = 4;
             lblRegister.Text = " ¡Regístrate ahora!";
             lblRegister.Click += lblRegister_Click;
@@ -159,10 +152,9 @@
             lblquestion.Appearance.ForeColor = Color.Gray;
             lblquestion.Appearance.Options.UseFont = true;
             lblquestion.Appearance.Options.UseForeColor = true;
-            lblquestion.Location = new Point(46, 412);
-            lblquestion.Margin = new Padding(4);
+            lblquestion.Location = new Point(39, 335);
             lblquestion.Name = "lblquestion";
-            lblquestion.Size = new Size(130, 21);
+            lblquestion.Size = new Size(110, 17);
             lblquestion.TabIndex = 9;
             lblquestion.Text = "¿No tienes cuenta?";
             // 
@@ -170,10 +162,9 @@
             // 
             lblsubLogin.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblsubLogin.Appearance.Options.UseFont = true;
-            lblsubLogin.Location = new Point(20, 66);
-            lblsubLogin.Margin = new Padding(4);
+            lblsubLogin.Location = new Point(17, 54);
             lblsubLogin.Name = "lblsubLogin";
-            lblsubLogin.Size = new Size(256, 28);
+            lblsubLogin.Size = new Size(206, 21);
             lblsubLogin.TabIndex = 8;
             lblsubLogin.Text = "Administrar fácilmente tareas";
             // 
@@ -183,24 +174,21 @@
             lbllogin.Appearance.ForeColor = Color.SeaGreen;
             lbllogin.Appearance.Options.UseFont = true;
             lbllogin.Appearance.Options.UseForeColor = true;
-            lbllogin.Location = new Point(15, 6);
-            lbllogin.Margin = new Padding(4);
+            lbllogin.Location = new Point(13, 5);
             lbllogin.Name = "lbllogin";
-            lbllogin.Size = new Size(136, 60);
+            lbllogin.Size = new Size(109, 47);
             lbllogin.TabIndex = 7;
             lbllogin.Text = "LOGIN";
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 16F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(382, 661);
+            ClientSize = new Size(327, 537);
             Controls.Add(panelControl1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             IconOptions.Image = (Image)resources.GetObject("LoginForm.IconOptions.Image");
-            Margin = new Padding(4);
             MaximizeBox = false;
-            MinimizeBox = false;
             Name = "LoginForm";
             FormClosed += LoginForm_FormClosed;
             ((System.ComponentModel.ISupportInitialize)txtUsername.Properties).EndInit();
