@@ -4,7 +4,7 @@
 
 TaskManager – Sistema de Gestión de Tareas
 
-TaskManager es una aplicación de escritorio desarrollada en C# (.NET 6) con WinForms y DevExpress, diseñada para facilitar la administración de tareas dentro de un entorno empresarial.
+TaskManager es una aplicación de escritorio desarrollada en C# (.NET 6) con WinForms y DevExpress, diseñada para facilitar la administración de tareas.
 
 Permite gestionar tareas, asignarlas a usuarios, establecer prioridades, controlar estados, aplicar filtros avanzados y trabajar con una interfaz limpia y moderna.
 La aplicación utiliza SQLite como base de datos, lo que simplifica su distribución y portabilidad.
